@@ -38,6 +38,17 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+    /* PALETA DE COLORES */
+
+    --primary-color: #0f224c;
+    --secondary-color: #de9c2b ;
+    --tertiary-color: #48afb4;
+    --quaternary-color: #b3426c;
+    --quinary-color: #fbf5f0; 
+    --black-color: #000000;
+    --white-color: #FFFFFF;
+  
 }
 
 @media (prefers-color-scheme: dark) {
