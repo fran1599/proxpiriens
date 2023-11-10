@@ -1,20 +1,24 @@
 
 
+
 import { useState } from 'react';
-import Logo from './Logo';
-import MobileMenu from './MobileMenu';
-import './Navbar.css';
+import Logo from '../atoms/Logo';
+import MobileMenu from '../atoms/MobileMenu';
+
+
 
 
 const NavBar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="navbar">
+    <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 20px', backgroundColor: '#333', color: '#fff' }}>
     <Logo />
     <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={() => setIsMenuOpen(!isMenuOpen)} />
-  </nav>
-);
-}
+    </nav>)
+
+
+};
 
 export default NavBar
 
