@@ -1,3 +1,9 @@
+
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
+
+
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
     const handleSearch = () => {
         // Agregar lógica para mostrar el cuadro de búsqueda
@@ -21,8 +27,8 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             <li><a href="#">Destinos</a></li>
             <li><a href="#">Paquetes</a></li>
             <li><a href="#">Contacto</a></li>
-            <li className="menu-button"><button className="cart-button" onClick={handleSearch}>Cart</button></li>
-            <li className="menu-button"><button className="search-button" onClick={handleCart}>Search</button></li>
+            <li className="menu-button"><button className="cart-button" onClick={handleCart}><FontAwesomeIcon icon={faShoppingCart} /></button></li>
+            <li className="menu-button"><button className="search-button" onClick={handleSearch}><FontAwesomeIcon icon={faSearch} /></button></li>
         </ul>
       </div>
         
