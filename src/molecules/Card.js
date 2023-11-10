@@ -45,7 +45,7 @@ const Card = ({ destino }) => {
           figure {
             width: 95%;
             height: auto;
-            background-color: #ffffff;
+            background-color: var(--white-color);
             border: 1px solid black;
             border-radius: 10px;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
@@ -72,7 +72,7 @@ const Card = ({ destino }) => {
             padding: 15px;
           }
           h2 {
-            color: #0f224c;
+            color: var(--primary-color);
             font-size: 1.8rem;
             text-align: center;
             line-height: 1;
@@ -82,7 +82,7 @@ const Card = ({ destino }) => {
             
           }
           h5 {
-            color: #0f224c;
+            color: var(--primary-color);
             font-size: 0, 6rem;
             line-height: 0;
             font-family: "Roboto", sans-serif;
@@ -91,7 +91,7 @@ const Card = ({ destino }) => {
           }
 
           h6 {
-            color: #0f224c;
+            color: var(--primary-color);
             font-size: 0, 7rem;
             line-height: 0;
             font-family: "Roboto", sans-serif;
@@ -99,7 +99,7 @@ const Card = ({ destino }) => {
 
           }
           p {
-            color: black;
+            color: var(--black-color);
             font-size: 1rem;
             text-align: center;
             font-family: "Roboto", sans-serif;

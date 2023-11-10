@@ -14,7 +14,7 @@ const CardsSection = () => {
         {`
           section {
             text-align: center;
-            background-color: #fbf5f0;
+            background-color: var(--quinary-color);
             padding-bottom: 10px;
 
            }

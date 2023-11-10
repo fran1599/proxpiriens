@@ -10,7 +10,7 @@ const destinos = [
     text: "Paisajes, colores y belleza natural en Bariloche",
     paquete: "8 días / 7 noches, Vuelo directo Buenos Aires / Rosario - Bariloche, Gran Hotel Panamericano",
     precio: "$289.467",
-    bgcolor: "#0f224c",
+    bgcolor: "var(--primary-color)",
   },
   {
     id:2,
@@ -19,7 +19,7 @@ const destinos = [
     text: "Una mágica ciudad para descubrir",
     paquete: "4 días / 3 noches, Vuelo directo desde todo el país, Hotel HR Luxor Buenos Aires",
     precio: "$140.544",
-    bgcolor: "#0f224c",
+    bgcolor: "var(--primary-color)",
   },
   {
     id:3,
@@ -28,7 +28,7 @@ const destinos = [
     text: "Purmamarca ( cerro 7 colores) y Salinas Grandes",
     paquete: "9 días / 8 noches, Vuelos desde Buenos Aires, Quebrada de Humahuaca, Purmamarca, Cuesta de Lipan y Salinas Grandes, Hostal de los colores",
     precio: "$260.430",
-    bgcolor: "#0f224c",
+    bgcolor: "var(--primary-color)",
   },
   {
     id:4,
@@ -37,7 +37,7 @@ const destinos = [
     text: "Paisajes, colores y naturaleza en Córdoba",
     paquete: "5 días / 4 noches, Vuelo directo Buenos Aires / Rosario - Córdoba, Villa Cabrera Apart & Suites",
     precio: "$218.185",
-    bgcolor: "#0f224c",
+    bgcolor: "var(--primary-color)",
     
   },
   {
@@ -47,18 +47,18 @@ const destinos = [
     text: "Viví los mejores carnavales del país",
     paquete: "3 días / 2 noches, Toda la fiesta inigualable de los carnavales, Hotel Gualeguaychu",
     precio: "$110.560",
-    bgcolor: "#0f224c",
+    bgcolor: "var(--primary-color)",
     
   },
 
   {
-    id:65,
+    id:6,
     img: "/img/cards/Card-Iguazu.jpg",
     title: "Iguazú",
     text: "Apurate que se inundo todo",
     paquete: "3 días / 2 noches, Toda la fiesta inigualable de los carnavales, Hotel Gualeguaychu",
     precio: "$320.560",
-    bgcolor: "#0f224c",
+    bgcolor: "var(--primary-color)",
     
   },
 
