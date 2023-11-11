@@ -1,71 +1,24 @@
-
+import axios from "axios"
 import Card from '@/molecules/Card';
 import React, { useState, useEffect } from 'react';
 
-const destinos = [
-  {
-    id:1,
-    img: "/img/cards/Card-Bariloche.jpg",
-    title: "Bariloche",
-    text: "Paisajes, colores y belleza natural en Bariloche",
-    paquete: "8 días / 7 noches, Vuelo directo Buenos Aires / Rosario - Bariloche, Gran Hotel Panamericano",
-    precio: "$289.467",
-    bgcolor: "var(--primary-color)",
-  },
-  {
-    id:2,
-    img: "/img/cards/Card-Buenos-Aires.jpg",
-    title: "Buenos Aires",
-    text: "Una mágica ciudad para descubrir",
-    paquete: "4 días / 3 noches, Vuelo directo desde todo el país, Hotel HR Luxor Buenos Aires",
-    precio: "$140.544",
-    bgcolor: "var(--primary-color)",
-  },
-  {
-    id:3,
-    img: "/img/cards/Card-Cerro-Siete-Colores.jpg",
-    title: "Cerro Siete Colores",
-    text: "Purmamarca ( cerro 7 colores) y Salinas Grandes",
-    paquete: "9 días / 8 noches, Vuelos desde Buenos Aires, Quebrada de Humahuaca, Purmamarca, Cuesta de Lipan y Salinas Grandes, Hostal de los colores",
-    precio: "$260.430",
-    bgcolor: "var(--primary-color)",
-  },
-  {
-    id:4,
-    img: "/img/cards/Card-Cordoba.jpg",
-    title: "Córdoba",
-    text: "Paisajes, colores y naturaleza en Córdoba",
-    paquete: "5 días / 4 noches, Vuelo directo Buenos Aires / Rosario - Córdoba, Villa Cabrera Apart & Suites",
-    precio: "$218.185",
-    bgcolor: "var(--primary-color)",
-    
-  },
-  {
-    id:5,
-    img: "/img/cards/Card-Gualeguaychu.jpg",
-    title: "Gualeguaychú",
-    text: "Viví los mejores carnavales del país",
-    paquete: "3 días / 2 noches, Toda la fiesta inigualable de los carnavales, Hotel Gualeguaychu",
-    precio: "$110.560",
-    bgcolor: "var(--primary-color)",
-    
-  },
-
-  {
-    id:6,
-    img: "/img/cards/Card-Iguazu.jpg",
-    title: "Iguazú",
-    text: "Apurate que se inundo todo",
-    paquete: "3 días / 2 noches, Toda la fiesta inigualable de los carnavales, Hotel Gualeguaychu",
-    precio: "$320.560",
-    bgcolor: "var(--primary-color)",
-    
-  },
-
-];
-
 const CardsContainer = () => 
 {
+
+  const [destinos, setDestinos] = useState([]);
+
+  const updateState = async () => {
+    const ENDPOINTS = {
+     destinos: "http://localhost:5000/destinos",
+    }
+     const resDestinos = await axios.get(ENDPOINTS.destinos);
+
+     const destinosList = await resDestinos.data
+     
+     setDestinos(destinosList);
+   }
+   
+
   const [cardCount, setCardCount] = useState(0);
  
   useEffect(() => {
@@ -78,6 +31,8 @@ const CardsContainer = () =>
  
      window.addEventListener('resize', updateCardCount);
      updateCardCount();
+
+     updateState()
  
      return () => {
        window.removeEventListener('resize', updateCardCount);
