@@ -1,3 +1,5 @@
+
+import Link from "next/link";
 import CardsContainer from "./CardsContainer";
 
 const CardsSection = () => {
@@ -6,7 +8,7 @@ const CardsSection = () => {
       <section>
         <h2> Más populares:</h2>
         <CardsContainer />
-        <h3>Ver más!</h3>
+        <h3><Link href="/paquetes">Ver más!</Link></h3>
       </section>
       
 

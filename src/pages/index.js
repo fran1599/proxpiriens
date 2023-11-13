@@ -18,8 +18,7 @@ export default function Home() {
       </Head>
       <main>
 
-    <NavBar />  
-    <CardsSection />
+    <NavBar />     
 
         <style jsx global>{`
           body {
