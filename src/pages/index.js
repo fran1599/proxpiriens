@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import NavBar from '@/organims/NavBar'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,4 +26,5 @@ export default function Home() {
       </main>
     </>
   )
-}
+}     
+        
