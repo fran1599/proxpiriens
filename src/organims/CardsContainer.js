@@ -1,97 +1,77 @@
+import axios from "axios";
+import Card from "@/molecules/Card";
+import React, { useState, useEffect } from "react";
 
-import Card from '@/molecules/Card';
-import React, { useState, useEffect } from 'react';
+const CardsContainer = () => {
+  // Declaramos la variable destinos usando useState
+  // El valor inicial de destinos es un array vacío
 
-const destinos = [
-  {
-    id:1,
-    img: "/img/cards/Card-Bariloche.jpg",
-    title: "Bariloche",
-    text: "Paisajes, colores y belleza natural en Bariloche",
-    paquete: "8 días / 7 noches, Vuelo directo Buenos Aires / Rosario - Bariloche, Gran Hotel Panamericano",
-    precio: "$289.467",
-    bgcolor: "var(--primary-color)",
-  },
-  {
-    id:2,
-    img: "/img/cards/Card-Buenos-Aires.jpg",
-    title: "Buenos Aires",
-    text: "Una mágica ciudad para descubrir",
-    paquete: "4 días / 3 noches, Vuelo directo desde todo el país, Hotel HR Luxor Buenos Aires",
-    precio: "$140.544",
-    bgcolor: "var(--primary-color)",
-  },
-  {
-    id:3,
-    img: "/img/cards/Card-Cerro-Siete-Colores.jpg",
-    title: "Cerro Siete Colores",
-    text: "Purmamarca ( cerro 7 colores) y Salinas Grandes",
-    paquete: "9 días / 8 noches, Vuelos desde Buenos Aires, Quebrada de Humahuaca, Purmamarca, Cuesta de Lipan y Salinas Grandes, Hostal de los colores",
-    precio: "$260.430",
-    bgcolor: "var(--primary-color)",
-  },
-  {
-    id:4,
-    img: "/img/cards/Card-Cordoba.jpg",
-    title: "Córdoba",
-    text: "Paisajes, colores y naturaleza en Córdoba",
-    paquete: "5 días / 4 noches, Vuelo directo Buenos Aires / Rosario - Córdoba, Villa Cabrera Apart & Suites",
-    precio: "$218.185",
-    bgcolor: "var(--primary-color)",
-    
-  },
-  {
-    id:5,
-    img: "/img/cards/Card-Gualeguaychu.jpg",
-    title: "Gualeguaychú",
-    text: "Viví los mejores carnavales del país",
-    paquete: "3 días / 2 noches, Toda la fiesta inigualable de los carnavales, Hotel Gualeguaychu",
-    precio: "$110.560",
-    bgcolor: "var(--primary-color)",
-    
-  },
+  const [destinos, setDestinos] = useState([]);
 
-  {
-    id:6,
-    img: "/img/cards/Card-Iguazu.jpg",
-    title: "Iguazú",
-    text: "Apurate que se inundo todo",
-    paquete: "3 días / 2 noches, Toda la fiesta inigualable de los carnavales, Hotel Gualeguaychu",
-    precio: "$320.560",
-    bgcolor: "var(--primary-color)",
-    
-  },
+  // Definimos una función asíncrona llamada updateState que obtendrá los datos de la API y actualizará el estado
 
-];
+  const updateState = async () => {
+    // Definimos un objeto con los endpoints de la API
+    // En este caso, solo tenemos un endpoint para destinos
 
-const CardsContainer = () => 
-{
+    const ENDPOINTS = {
+      destinos: "http://localhost:5000/destinos",
+    };
+
+    // Usamos axios para hacer una petición GET al endpoint de destinos
+    // Usamos await para esperar la respuesta
+
+    const resDestinos = await axios.get(ENDPOINTS.destinos);
+    // Obtenemos los datos de la respuesta y los guardamos en una variable llamada destinosList
+
+    const destinosList = await resDestinos.data;
+
+    // Asignamos el valor de destinosList a la variable destinos usando setDestinos
+    // setDestinos es una función que actualiza el estado del componente con el nuevo valor
+
+    setDestinos(destinosList);
+  };
+
   const [cardCount, setCardCount] = useState(0);
- 
-  useEffect(() => {
-     const updateCardCount = () => {
-       const width = window.innerWidth;
-       const cardLimit = Math.floor(width / 330);       
-       const count = cardLimit < 2 ? 5 : cardLimit;
-       setCardCount(count);
-       };
- 
-     window.addEventListener('resize', updateCardCount);
-     updateCardCount();
- 
-     return () => {
-       window.removeEventListener('resize', updateCardCount);
-     };
-  }, []);
- 
-  return (
-     <>
-       <div>
-         {destinos.slice(0, cardCount).map((destino) => (
-           <Card destino={destino}/>
-         ))}
-       </div>
 
+  useEffect(() => {
+    const updateCardCount = () => {
+      const width = window.innerWidth;
+      const cardLimit = Math.floor(width / 330);
+      const count = cardLimit < 2 ? 5 : cardLimit;
+      setCardCount(count);
+    };
+
+    window.addEventListener("resize", updateCardCount);
+    updateCardCount();
+
+    updateState();
+
+    return () => {
+      window.removeEventListener("resize", updateCardCount);
+    };
+  }, []);
+
+  // Variable de estado para mostrar todas las tarjetas o las correspondientes al ancho de pantalla
+  const [showAll, setShowAll] = useState(false);
+
+  // Función para cambiar el valor de showAll al opuesto
+  const handleVerMas = () => {
+    setShowAll(!showAll);
+  };
+
+  return (
+    <>
+      <div>
+        {/* Operador ternario para decidir qué tarjetas mostrar según el valor de showAll */}
+        {showAll
+          ? destinos.map((destino) => <Card destino={destino} />)
+          : destinos
+              .slice(0, cardCount)
+              .map((destino) => <Card destino={destino} />)}
+      </div>
+      {/* Botón para llamar a la función handleVerMas */}
+      <button onClick={handleVerMas}>{showAll ? "Ver menos" : "Ver más"}</button>
 
       <style jsx>{`
         div {
@@ -99,8 +79,34 @@ const CardsContainer = () =>
           flex-wrap: wrap;
           align-items: center;
           justify-content: center;
-          padding:10px;
+          padding: 10px;
           margin: 20px 0;
+        }
+
+        h3 {
+          font-size: 1rem;
+          font-family: "Alfa Slab One", serif;
+          letter-spacing: 0.1em;
+          cursor: pointer;
+          color: var(--primary-color);
+        }
+
+        button {
+          color: white;
+          background-color: var(--primary-color);
+          border: none;
+          border-radius: 0.5rem;
+          box-shadow: 1px 2px 2px black;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          font-weight: bold;
+          transition: 0.3s;
+          margin-bottom: 30px;
+          cursor: pointer;
+        }
+        button:hover {
+          transform: traslateY(2px);
+          box-shadow: none;
         }
 
         @media only screen and (min-width: 450px) {
@@ -108,7 +114,7 @@ const CardsContainer = () =>
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
             grid-gap: 20px;
-            padding: 20px;           
+            padding: 20px;
           }
         }
       `}</style>
@@ -117,4 +123,3 @@ const CardsContainer = () =>
 };
 
 export default CardsContainer;
-
