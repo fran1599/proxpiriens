@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,6 +15,24 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
         // Agregar lógica para abrir el carrito
         console.log('Abrir carrito');   
     };
+
+    useEffect(() => {
+      const handleResize = () => {
+        // Solo cierro el menú si está abierto y la pantalla es más grande que 768px
+        if (isMenuOpen && window.innerWidth > 768) {
+          // Cierra el menú si la pantalla es más grande que 768px
+          toggleMenu(false);
+        }
+      };
+      // Agrego el evento de cambio de tamaño
+      window.addEventListener('resize', handleResize);
+      
+      // Limpio el evento al desmontar el componente
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, [isMenuOpen, toggleMenu]);
+
     return (
     <>
       <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
