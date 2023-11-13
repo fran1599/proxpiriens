@@ -11,7 +11,6 @@ const CardsContainer = () => {
   // Definimos una función asíncrona llamada updateState que obtendrá los datos de la API y actualizará el estado
 
   const updateState = async () => {
-    
     // Definimos un objeto con los endpoints de la API
     // En este caso, solo tenemos un endpoint para destinos
 
@@ -24,7 +23,7 @@ const CardsContainer = () => {
 
     const resDestinos = await axios.get(ENDPOINTS.destinos);
     // Obtenemos los datos de la respuesta y los guardamos en una variable llamada destinosList
-    
+
     const destinosList = await resDestinos.data;
 
     // Asignamos el valor de destinosList a la variable destinos usando setDestinos
@@ -53,13 +52,26 @@ const CardsContainer = () => {
     };
   }, []);
 
+  // Variable de estado para mostrar todas las tarjetas o las correspondientes al ancho de pantalla
+  const [showAll, setShowAll] = useState(false);
+
+  // Función para cambiar el valor de showAll al opuesto
+  const handleVerMas = () => {
+    setShowAll(!showAll);
+  };
+
   return (
     <>
       <div>
-        {destinos.slice(0, cardCount).map((destino) => (
-          <Card destino={destino} />
-        ))}
+        {/* Operador ternario para decidir qué tarjetas mostrar según el valor de showAll */}
+        {showAll
+          ? destinos.map((destino) => <Card destino={destino} />)
+          : destinos
+              .slice(0, cardCount)
+              .map((destino) => <Card destino={destino} />)}
       </div>
+      {/* Botón para llamar a la función handleVerMas */}
+      <button onClick={handleVerMas}>{showAll ? "Ver menos" : "Ver más"}</button>
 
       <style jsx>{`
         div {
@@ -69,6 +81,32 @@ const CardsContainer = () => {
           justify-content: center;
           padding: 10px;
           margin: 20px 0;
+        }
+
+        h3 {
+          font-size: 1rem;
+          font-family: "Alfa Slab One", serif;
+          letter-spacing: 0.1em;
+          cursor: pointer;
+          color: var(--primary-color);
+        }
+
+        button {
+          color: white;
+          background-color: var(--primary-color);
+          border: none;
+          border-radius: 0.5rem;
+          box-shadow: 1px 2px 2px black;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          font-weight: bold;
+          transition: 0.3s;
+          margin-bottom: 30px;
+          cursor: pointer;
+        }
+        button:hover {
+          transform: traslateY(2px);
+          box-shadow: none;
         }
 
         @media only screen and (min-width: 450px) {

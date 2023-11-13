@@ -78,7 +78,7 @@
 
       {
         "id": 9,
-        "img": "/img/cards/Card-Puerto-Pirámides.jpg",
+        "img": "/img/cards/Card-Puerto-Piramides.jpg",
         "title": "Puerto Pirámides",
         "text": "La majestuosidad del océano y las ballenas",
         "paquete": "4 días / 3 noches, Vuelo + alojamiento en el hotel Océano Patagonia by Nordic, excursión en lancha al océano",
@@ -89,7 +89,7 @@
       {
         "id": 10,
         "img": "/img/cards/Card-Ruta40.jpg",
-        "title": "Desde Bariloche al Chaltén",
+        "title": "Ruta 40",
         "text": "Un recorrido por la Ruta más hermosa del país",
         "paquete": "7 días / 6 noches, Vuelo directo a Bariloche, motorhome con todo incluído, desde Bariloche hasta el Chaltén, grupos reducidos",
         "precio": "$523.342",
@@ -108,7 +108,7 @@
 
       {
         "id": 12,
-        "img": "/img/cards/Card-Iguazu.jpg",
+        "img": "/img/cards/Card-Valle-De-La-Luna.jpg",
         "title": "Valle de la Luna",
         "text": "Ischigualasto - Parque triásico",
         "paquete": "3 días / 2 noches, Salida en micro desde todo el país, incluye excursión por el Parque Natural Ischigualasto",
