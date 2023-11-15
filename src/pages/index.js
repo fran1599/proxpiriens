@@ -4,6 +4,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import styles from "@/styles/Home.module.css";
 import NavBar from '@/organims/NavBar'
 import CardsSection from '@/organims/CardsSection';
+import Carousel1 from '@/atoms/Carousel1';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,8 @@ export default function Home() {
         <link rel="icon" href="./LogoColorFloating.png" />
       </Head>
       <main>
-    <NavBar />     
+    <NavBar />   
+    <Carousel1/>  
     <CardsSection/>
         <style jsx global>{`
           body {

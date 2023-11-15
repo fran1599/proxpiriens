@@ -14,7 +14,7 @@ const Carousel1 = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 4000);
+    const intervalId = setInterval(nextSlide, 6000);
 
     return () => {
       clearInterval(intervalId);
@@ -24,15 +24,15 @@ const Carousel1 = () => {
   return (
   <>
   <div className="carousel-container">
-    <button className="carousel-button" onClick={prevSlide}>&lt;</button>
+    <button className="carousel-button button-left" onClick={prevSlide}>&lt;</button>
     <div className="carousel-slide">
-      <img className="card-img" src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+      <img className="carousel-img" src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
     </div>
-    <button className="carousel-button" onClick={nextSlide}>&gt;</button>
+    <button className="carousel-button button-right" onClick={nextSlide}>&gt;</button>
   </div>
   <style jsx>{`
   .carousel-container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0px 0px 10px 0px rgba(2, 2, 5, 0.1);
@@ -40,30 +40,40 @@ const Carousel1 = () => {
     align-items: center;
     justify-content: center;
   }
-  .card-img {
-    width: 100%;
-    height: 600px;
+  .carousel-img {
     object-fit: cover;
     border-radius: 1rem;
+    
   }
   .carousel-slide img {
-    width: 60rem;
-    height: 30rem;
-    object-fit: cover;
+    width: 96vw;
+    height: 85vh;
   }
   .carousel-button {
-    font-size: 24px;
-    margin: 0 10px;
+    font-size: 2rem;
+    margin: 2vw;
+    padding: 0vw 1.5vw;
     cursor: pointer;
-    background-color: #45a049;
+    background-color: rgba(0, 0, 0, 0.2);
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px; 
+    position: absolute;
+    border-radius:10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
   }
+
+  .button-left {
+    left: 5vw;
+  }
+
+  .button-right {
+    right: 5vw;
+  }
+
   .carousel-button:hover {
-    background-color: blue;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition : 0.2s;
 }
 `}</style>
   </>
