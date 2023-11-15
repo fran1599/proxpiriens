@@ -18,8 +18,8 @@ export default function Home() {
         <link rel="icon" href="./LogoColorFloating.png" />
       </Head>
       <main>
-    <NavBar />   
-    <Carousel1/>  
+    {/* <NavBar />    */}
+    {/* <Carousel1/>   */}
     <CardsSection/>
         <style jsx global>{`
           body {
