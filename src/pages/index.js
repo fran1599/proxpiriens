@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import styles from "@/styles/Home.module.css";
 import NavBar from '@/organims/NavBar'
+import CardsSection from '@/organims/CardsSection';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <main>
     <NavBar />     
+    <CardsSection/>
         <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;
