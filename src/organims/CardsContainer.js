@@ -1,5 +1,6 @@
 import axios from "axios";
 import Card from "@/molecules/Card";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const CardsContainer = () => {
@@ -52,26 +53,19 @@ const CardsContainer = () => {
     };
   }, []);
 
-  // Variable de estado para mostrar todas las tarjetas o las correspondientes al ancho de pantalla
-  const [showAll, setShowAll] = useState(false);
-
-  // Función para cambiar el valor de showAll al opuesto
-  const handleVerMas = () => {
-    setShowAll(!showAll);
-  };
-
   return (
     <>
       <div>
-        {/* Operador ternario para decidir qué tarjetas mostrar según el valor de showAll */}
-        {showAll
-          ? destinos.map((destino) => <Card destino={destino} />)
-          : destinos
-              .slice(0, cardCount)
-              .map((destino) => <Card destino={destino} />)}
+        {destinos.slice(0, cardCount).map((destino) => (
+          <Card key={destino.id} destino={destino} />
+        ))}
       </div>
-      {/* Botón para llamar a la función handleVerMas */}
-      <button onClick={handleVerMas}>{showAll ? "Ver menos" : "Ver más"}</button>
+
+      <button>
+        <Link href="/destinos">
+          Conocé todos nuestros destinos
+        </Link>
+      </button>
 
       <style jsx>{`
         div {
