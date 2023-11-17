@@ -1,6 +1,7 @@
 import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
-import React, { useState } from "react";
+import { useCart } from '../context/CartContext';
+import { useState } from "react";
 
 const Card = ({ destino }) => {
   const { img, title, text, paquete, precio, bgcolor } = destino;
@@ -15,7 +16,13 @@ const Card = ({ destino }) => {
     } else {
       return "Ver más...";
     }
+  }
+  const { dispatch } = useCart();
+
+  const addToCart = () => {
+    dispatch({ type: 'ADD_TO_CART', payload: destino });
   };
+ 
 
   return (
     <>
@@ -34,7 +41,7 @@ const Card = ({ destino }) => {
           <h2>{precio}</h2>
           <h6>Incluye impuestos, tasas y cargos</h6>
           <div className="keypad">
-            <ButtonReserve bgcolor={bgcolor} />
+            <ButtonReserve onClick={addToCart} bgcolor={bgcolor} />
             <ButtonFavorite />
           </div>
         </div>
