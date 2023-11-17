@@ -1,34 +1,43 @@
 import React, { useState, useEffect } from 'react';
 
 
-const images = [`https://blog2.alquilerargentina.com/wp-content/uploads/2018/04/cadillal.jpg`, `https://larutanatural.gob.ar/panel/public/uploads/rutas-naturales/generated/w1800,h1253,fcrop,q80/aa2bd951-8e3e-4cab-98f8-004eebe7992b.jpg`, `https://i.pinimg.com/originals/1a/f5/f1/1af5f108fee400d3f54fd90ef9d6d579.jpg`, `https://media.viajando.travel/p/63f976b8cdc1d2ce3ab05c9d5fa968d5/adjuntos/236/imagenes/000/589/0000589954/1200x0/smart/mendoza-la-formacion-rocosa-puente-del-inca-crea-un-puente-natural-el-rio-las-cuevas-y-sus-aguas-son-famosas-poseer-propiedades-curativas.jpg`];
+const images = ['/img/Carousel1/Ruta-40.png', '/img/Carousel1/Jujuy-Purmamarca.png', '/img/Carousel1/Catamarca.png', '/img/Carousel1/Chubut-cholila.png', '/img/Carousel1/Neuquen.png', '/img/Carousel1/Resistencia-Chaco.png', '/img/Carousel1/San-Juan.png', '/img/Carousel1/Santa-Cruz-Calafate.png', '/img/Carousel1/Tucuman-El-Cadillal.jpg', '/img/Carousel1/Tucuman-San-Javier.jpg'];
+
+//Este arrays contiene las url de las imagenes que se van a mostrar.
 
 const Carousel1 = () => {
+  //El Estado rastrea el indice actual de la imagen.
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
+ 
+  //Las dos funciones para avanzar y volver a la imagen anterior.
+ 
+ const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
+
+  //El Efecto para cambiar automaticamente las imagenes cada 5 segundos.
+
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 4000);
+    const intervalId = setInterval(nextSlide, 5000);
+
+//Se limpia el intervalo cuando el componente se desmonta.
 
     return () => {
       clearInterval(intervalId);
     };
   }, []);
 
-  return (
+//Renderizado y Estilos utilizando style-jsx.
+  
+return (
   <>
   <div className="carousel-container">
-    <button className="carousel-button" onClick={prevSlide}>&lt;</button>
     <div className="carousel-slide">
       <img className="card-img" src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
     </div>
-    <button className="carousel-button" onClick={nextSlide}>&gt;</button>
   </div>
   <style jsx>{`
   .carousel-container {
@@ -51,20 +60,20 @@ const Carousel1 = () => {
     height: 30rem;
     object-fit: cover;
   }
-  .carousel-button {
-    font-size: 24px;
-    margin: 0 10px;
-    cursor: pointer;
-    background-color: #45a049;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
   .carousel-button:hover {
     background-color: blue;
 }
+@media screen and (max-width: 768px) {
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-container {
+    width: 100%;
+  }
 `}</style>
   </>
   );
