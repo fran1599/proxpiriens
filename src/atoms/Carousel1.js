@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
-
-const images = [`https://blog2.alquilerargentina.com/wp-content/uploads/2018/04/cadillal.jpg`, `https://larutanatural.gob.ar/panel/public/uploads/rutas-naturales/generated/w1800,h1253,fcrop,q80/aa2bd951-8e3e-4cab-98f8-004eebe7992b.jpg`, `https://i.pinimg.com/originals/1a/f5/f1/1af5f108fee400d3f54fd90ef9d6d579.jpg`, `https://media.viajando.travel/p/63f976b8cdc1d2ce3ab05c9d5fa968d5/adjuntos/236/imagenes/000/589/0000589954/1200x0/smart/mendoza-la-formacion-rocosa-puente-del-inca-crea-un-puente-natural-el-rio-las-cuevas-y-sus-aguas-son-famosas-poseer-propiedades-curativas.jpg`];
+// Lista de rutas de imágenes para el carousel es local y está en el directorio del proyecto. 
+const images = ['/img/Carousel1/Ruta-40.png', '/img/Carousel1/Tucuman-San-Javier.jpg', '/img/Carousel1/Chubut.jpg', '/img/Carousel1/Mendoza.jpg','/img/Carousel1/Catamarca.jpg', '/img/Carousel1/Tucuman.jpg', '/img/Carousel1/Jujuy.jpg', '/img/Carousel1/Santa-Cruz-Calafate.png', '/img/Carousel1/Misiones.jpg', '/img/Carousel1/Neuquen.png',];
 
 const Carousel1 = () => {
+//Este es un estado para realizar el seguimiento al índice actual de la imagen
   const [currentIndex, setCurrentIndex] = useState(0);
-
+// Función nombrada nextSlide para avanzar al siguiente slide
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-
+// Función nombrada prevSlide para retroceder al slide anterrior
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
+//En este efecto se avanzar automáticamente al siguiente slide cada 8 segundos  
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 6000);
-
+    const intervalId = setInterval(nextSlide, 8000);
+//El intervalo se limpia cuando el componente se desmonta
     return () => {
       clearInterval(intervalId);
     };
@@ -42,8 +44,12 @@ const Carousel1 = () => {
   }
   .carousel-img {
     object-fit: cover;
-    border-radius: 1rem;
-    
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: 15s;
+  }
+  .carousel-img:hover {
+    transform: scale(1.07);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   }
   .carousel-slide img {
     width: 96vw;
@@ -57,24 +63,29 @@ const Carousel1 = () => {
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
     border: none;
-    position: absolute;
-    border-radius:10px;
+    border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
+    transition: 2s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
   }
-
+  .carousel-slide {
+    position: relative;
+  } 
   .button-left {
-    left: 5vw;
+    left: 1vw;
   }
 
   .button-right {
-    right: 5vw;
+    right: 1vw;
   }
-
   .carousel-button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     transition : 0.2s;
-}
+  }
+ 
 `}</style>
   </>
   );
