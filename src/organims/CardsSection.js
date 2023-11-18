@@ -13,7 +13,6 @@ const CardsSection = () => {
         {`
           section {
             text-align: center;
-            background-color: var(--quinary-color);
             padding-bottom: 10px;
 
            }
@@ -24,7 +23,7 @@ const CardsSection = () => {
             margin-bottom: -10px;
             font-family: "Alfa Slab One", serif;
             letter-spacing: 0.1em;
-            color: #0f224c
+            color: var(--tertiary-color)
           }
 
 

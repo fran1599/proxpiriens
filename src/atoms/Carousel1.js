@@ -1,82 +1,106 @@
 import React, { useState, useEffect } from 'react';
 
 
-const images = ['/img/Carousel1/Ruta-40.png', '/img/Carousel1/Jujuy-Purmamarca.png', '/img/Carousel1/Catamarca.png', '/img/Carousel1/Chubut-cholila.png', '/img/Carousel1/Neuquen.png', '/img/Carousel1/Resistencia-Chaco.png', '/img/Carousel1/San-Juan.png', '/img/Carousel1/Santa-Cruz-Calafate.png', '/img/Carousel1/Tucuman-El-Cadillal.jpg', '/img/Carousel1/Tucuman-San-Javier.jpg'];
-
-//Este arrays contiene las url de las imagenes que se van a mostrar.
+// Lista de rutas de imágenes para el carousel es local y está en el directorio del proyecto. 
+const images = ['/img/Carousel1/Ruta-40.png', '/img/Carousel1/Tucuman-San-Javier.jpg', '/img/Carousel1/Chubut.jpg', '/img/Carousel1/Mendoza.jpg','/img/Carousel1/Catamarca.jpg', '/img/Carousel1/Tucuman.jpg', '/img/Carousel1/Jujuy.jpg', '/img/Carousel1/Santa-Cruz-Calafate.png', '/img/Carousel1/Misiones.jpg', '/img/Carousel1/Neuquen.png',];
 
 const Carousel1 = () => {
-  //El Estado rastrea el indice actual de la imagen.
-  const [currentIndex, setCurrentIndex] = useState(0);
- 
-  //Las dos funciones para avanzar y volver a la imagen anterior.
- 
- const nextSlide = () => {
+//Este es un estado para realizar el seguimiento al índice actual de la imagen
+const [currentIndex, setCurrentIndex] = useState(0);
+
+// Función nombrada nextSlide para avanzar al siguiente slide
+  const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
+  
+// Función nombrada prevSlide para retroceder al slide anterrior
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  //El Efecto para cambiar automaticamente las imagenes cada 5 segundos.
-
+//En este efecto se avanzar automáticamente al siguiente slide cada 8 segundos  
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 5000);
+    const intervalId = setInterval(nextSlide, 8000);
 
-//Se limpia el intervalo cuando el componente se desmonta.
-
+//El intervalo se limpia cuando el componente se desmonta
     return () => {
       clearInterval(intervalId);
     };
   }, []);
 
-//Renderizado y Estilos utilizando style-jsx.
-  
+
 return (
   <>
   <div className="carousel-container">
+    <button className="carousel-button button-left" onClick={prevSlide}>&lt;</button>
     <div className="carousel-slide">
-      <img className="card-img" src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+      <img className="carousel-img" src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
     </div>
+    <button className="carousel-button button-right" onClick={nextSlide}>&gt;</button>
   </div>
-  <style jsx>{`
-  .carousel-container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0px 0px 10px 0px rgba(2, 2, 5, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .card-img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    border-radius: 1rem;
-  }
-  .carousel-slide img {
-    width: 60rem;
-    height: 30rem;
-    object-fit: cover;
-  }
-  .carousel-button:hover {
-    background-color: blue;
-}
-@media screen and (max-width: 768px) {
-  .carousel-slide img {
-    width: 100%;
-    height: auto;
-  }
-}
 
-@media screen and (max-width: 480px) {
-  .carousel-container {
-    width: 100%;
-  }
-`}</style>
-  </>
-  );
+ <style jsx>{`
+   .carousel-container {
+     width: 100%;
+     margin: 0 auto;
+     padding: 20px;
+     box-shadow: 0px 0px 10px 0px rgba(2, 2, 5, 0.1);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   .carousel-img {
+     object-fit: cover;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+     transition: 15s;
+   }
+   .carousel-img:hover {
+     transform: scale(1.07);
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+   }
+  
+   .carousel-button {
+     font-size: 2rem;
+     margin: 2vw;
+     padding: 0vw 1.5vw;
+     cursor: pointer;
+     background-color: rgba(0, 0, 0, 0.2);
+     color: white;
+     border: none;
+     border-radius: 10px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+     transition: 2s;
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 2;
+   }
+ 
+   .button-left {
+     left: 1vw;
+   }
+
+   .button-right {
+     right: 1vw;
+   }
+   .carousel-button:hover {
+     background-color: rgba(0, 0, 0, 0.5);
+     transition : 0.2s;
+   }
+   @media screen and (max-width: 768px) {
+     .carousel-slide img {
+       width: 100%;
+       height: auto;
+     }
+   }
+   
+   @media screen and (max-width: 480px) {
+     .carousel-container {
+       width: 100%;
+     }
+` }</style>
+ </>
+ );
 };
 
 export default Carousel1;
