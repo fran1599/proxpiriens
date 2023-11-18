@@ -53,6 +53,8 @@ return (
      object-fit: cover;
      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
      transition: 15s;
+     width: 96vw;
+     height: 85vh;
    }
    .carousel-img:hover {
      transform: scale(1.07);
