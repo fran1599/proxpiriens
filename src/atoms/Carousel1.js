@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react';
 // Lista de rutas de imágenes para el carousel es local y está en el directorio del proyecto. 
 const images = [
   '/img/Carousel1/Ruta-40.png',
-  '/img/Carousel1/Jujuy-Purmamarca.png',
-  '/img/Carousel1/Catamarca.png',
-  '/img/Carousel1/Chubut-cholila.png',
+  '/img/Carousel1/Jujuy.jpg',
+  '/img/Carousel1/Catamarca.jpg',
+  '/img/Carousel1/Chubut.jpg',
   '/img/Carousel1/Neuquen.png',
-  '/img/Carousel1/Resistencia-Chaco.png',
-  '/img/Carousel1/San-Juan.png',
+  '/img/Carousel1/Mendoza.jpg',
+  '/img/Carousel1/Misiones.jpg',
   '/img/Carousel1/Santa-Cruz-Calafate.png',
-  '/img/Carousel1/Tucuman-El-Cadillal.jpg',
+  '/img/Carousel1/Tucuman.jpg',
   '/img/Carousel1/Tucuman-San-Javier.jpg'
 ];
 
