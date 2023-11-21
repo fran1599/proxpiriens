@@ -5,7 +5,7 @@ const Footer = () => {
     return (
       <footer className="footer">
         <div className="banner">
-          <img src="" alt="Banner" />
+          <img src="falta agregar ruta img" alt="Banner" />
         </div>
         <div className="contact">
           <h2>Contacto</h2>
@@ -20,3 +20,4 @@ const Footer = () => {
     );
   };
   
+  export default Footer;
