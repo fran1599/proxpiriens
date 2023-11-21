@@ -18,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="./LogoColorFloating.png" />
       </Head>
       <main>
-    <NavBar />   
+    <NavBar/>   
     <Carousel1/>  
     <CardsSection/>
         <style jsx global>{`
@@ -26,7 +26,9 @@ export default function Home() {
             font-family: ${inter}, sans-serif;
           }
         `}</style>
+    
       </main>
-    </>
+      </>
+
   )
 }
