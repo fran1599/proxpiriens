@@ -39,7 +39,7 @@ const CardsContainer = () => {
     const updateCardCount = () => {
       const width = window.innerWidth;
       const cardLimit = Math.floor(width / 330);
-      const count = cardLimit < 2 ? 5 : cardLimit;
+      const count = cardLimit < 2 ? 4 : cardLimit;
       setCardCount(count);
     };
 
