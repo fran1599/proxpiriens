@@ -1,10 +1,13 @@
+
+
+
 import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
 import { useCart } from '../context/CartContext';
 import { useState } from "react";
 
 const Card = ({ destino }) => {
-  const { img, title, text, paquete, precio, bgcolor } = destino;
+  const { id, img, title, text, paquete, precio, bgcolor } = destino;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -21,6 +24,7 @@ const Card = ({ destino }) => {
 
   const addToCart = () => {
     dispatch({ type: 'ADD_TO_CART', payload: destino });
+    alert(`${title} se ha agregado al carrito`);
   };
  
 

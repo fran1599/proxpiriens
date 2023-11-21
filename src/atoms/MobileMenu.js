@@ -2,15 +2,17 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import { useRouter } from 'next/router';
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
+  const router = useRouter()
     const handleSearch = () => {
         // Agregar lógica para mostrar el cuadro de búsqueda
         console.log('Mostrar cuadro de búsqueda');
     };
 
     const handleCart = () => {
+      router.push('/src/pages/shoppingCart.js')
         // Agregar lógica para abrir el carrito
         console.log('Abrir carrito');
     };

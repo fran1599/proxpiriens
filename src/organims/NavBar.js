@@ -17,7 +17,6 @@ const NavBar = () => {
     <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={() => setIsMenuOpen(!isMenuOpen)} />
     </nav>)
 
-
 };
 
 export default NavBar

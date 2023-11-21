@@ -14,7 +14,7 @@ const shoppingCart = () => {
       <h2>Carrito de Compras</h2>
       {state.cartItems.map((item) => (
         <div key={item.id}>
-          <p>{item.name}</p>
+          <p>{item.name}  - Precio: ${item.precio}</p>
           <button onClick={() => removeFromCart(item)}>Eliminar</button>
         </div>
       ))}

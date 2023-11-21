@@ -1,14 +1,14 @@
+
+
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import CardsSection from '@/organims/CardsSection'
-=======
-import NavBar from '@/organims/NavBar'
+
+import { CartProvider } from '@/context/CartContext'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({Component , pageProps}) {
   return (
     <>
       <Head>
@@ -18,16 +18,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        holaaaa ok
-        <CardsSection />
-=======
+
+      <CartProvider />
+      <Component {...pageProps} />
+      
       <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;
           }
       `}</style>
 
-        <NavBar />
+        
       </main>
     </>
   )
