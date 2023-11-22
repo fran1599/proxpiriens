@@ -39,7 +39,7 @@ const ShoppingCart = () => {
     <div>
     <h3>PRODUCTOS</h3>
     <div className="box-cart box-grid">
-      {products.map((product) => (<Card key={product.id} data={product} addToCart={addToCart}/> ))}
+      {products.map((product) => (<Card key={product.id} destino={product} addToCart={addToCart}/> ))}
     </div>
     <h3>CARRITO</h3>
     <button onClick={clearToCart}>LIMPIAR CARRITO</button>

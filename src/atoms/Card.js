@@ -1,11 +1,20 @@
+
+
 import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
-import React, { useState } from "react";
+import { useState } from "react";
 
-const Card = ({ destino }) => {
-  const { img, title, text, paquete, precio, bgcolor } = destino;
+const Card = ({ destino, addToCart }) => {
+   // Verificar si 'destino' está definido
+   if (!destino) {
+    return <p>Error: Destino no definido</p>;}
+    
+  const { img, title, text, paquete, precio, bgcolor, id } = destino;
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleAddToCart = () => {
+    addToCart(id);
+  }
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -34,7 +43,7 @@ const Card = ({ destino }) => {
           <h2>{precio}</h2>
           <h6>Incluye impuestos, tasas y cargos</h6>
           <div className="keypad">
-            <ButtonReserve bgcolor={bgcolor} />
+            <ButtonReserve onClick={handleAddToCart} bgcolor={bgcolor} />
             <ButtonFavorite />
           </div>
         </div>
