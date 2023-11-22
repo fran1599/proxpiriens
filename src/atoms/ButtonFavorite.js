@@ -21,9 +21,10 @@ function ButtonFavorite() {
             background-color: transparent;
             border: none;
             cursor: pointer;
+            
           }
           img {
-            width: 32px;
+            width: 55px;
           }
         `}
       </style>
