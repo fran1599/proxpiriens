@@ -3,6 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
+      <>
       <footer className="footer">
         <div className="banner">
           <img src="falta agregar ruta img" alt="Banner" />
@@ -18,6 +19,7 @@ const Footer = () => {
         </div>
         
       </footer>
+      </>
     );
   };
   
