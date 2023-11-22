@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import NavBar from '@/organims/NavBar'
 import CardsSection from '@/organims/CardsSection';
 import Carousel1 from '@/atoms/Carousel1';
+import Footer from '@/organims/footer';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,15 @@ export default function Home() {
         <link rel="icon" href="./LogoColorFloating.png" />
       </Head>
       <main>
+
     <NavBar/>   
+
     <Carousel1/>  
+
     <CardsSection/>
+
+    <Footer/>
+    
         <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;
