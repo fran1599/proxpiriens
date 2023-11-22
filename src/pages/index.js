@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import styles from "@/styles/Home.module.css";
 import NavBar from '@/organims/NavBar'
 import CardsSection from '@/organims/CardsSection';
-import Carousel1 from '@/atoms/Carousel1';
+import Carousel1 from '@/organims/Carousel1';
 
 const inter = Inter({ subsets: ["latin"] });
 
