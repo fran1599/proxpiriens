@@ -5,29 +5,27 @@ import { TYPES } from "@/actions/ShoppingActions"
 import { useReducer } from "react"
 
 import { cartReducer, cartInitialState } from "./ShoppingReducer";
+
 import Card from "@/atoms/Card";
 import CartItem from "./CartItem";
 
 
+const ShoppingCart = () => {
 
+  const [state, dispatch] = useReducer(cartReducer, cartInitialState)
 
+  const {products, cart, favorites} = state;
 
-  const ShoppingCart = () => {
+  const addToCart = (id) => {
+    dispatch({type: TYPES.ADD_TO_CART, payload:id})
+  };
 
-    const [state, dispatch] = useReducer(cartReducer, cartInitialState)
-
-    const {products, cart, favorites} = state;
-
-    const addToCart = (id) => {
-      dispatch({type: TYPES.ADD_TO_CART, payload:id})
-    };
-
-    const deleteToCart = (id, all = false) => {
-      if (all) {
-        dispatch({type: TYPES.REMOVE_ALL_FROM_CART, payload:id});
-      } else {
-        dispatch({type: TYPES.REMOVE_ONE_FROM_CART, payload:id});
-      }
+  const deleteToCart = (id, all = false) => {
+    if (all) {
+      dispatch({type: TYPES.REMOVE_ALL_FROM_CART, payload:id});
+    } else {
+      dispatch({type: TYPES.REMOVE_ONE_FROM_CART, payload:id});
+    }
   }
 
   const clearToCart = () => {

@@ -20,7 +20,7 @@ const CartItem = ({data, deleteToCart}) => {
             </div>
         </figcaption>
       </figure>
-
+                
         
         <style jsx>
         {`

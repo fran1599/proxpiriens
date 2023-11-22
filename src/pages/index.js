@@ -3,6 +3,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Card from '@/atoms/Card'
+import ShoppingCart from '@/molecules/shoppingCart/ShoppingCart'
 
 
 
@@ -20,6 +21,7 @@ export default function Home({Component , pageProps}) {
       </Head>
       <main>
 
+      <ShoppingCart /> 
       
       <style jsx global>{`
           body {

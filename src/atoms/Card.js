@@ -8,7 +8,7 @@ import ButtonFavorite from "./ButtonFavorite";
 
 const Card = ({ destino, addToCart }) => {
 
-  const { img, title, text, paquete, price, bgcolor } = destino;
+  const { img, title, text, paquete, price, bgcolor, id } = destino;
 
   const [isOpen, setIsOpen] = useState(false);
 

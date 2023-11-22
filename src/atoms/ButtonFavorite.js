@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+
+
+import { useState } from "react";
 
 function ButtonFavorite() {
   const [isFavorite, setIsFavorite] = useState(false);
