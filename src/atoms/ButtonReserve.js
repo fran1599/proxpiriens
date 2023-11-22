@@ -21,7 +21,7 @@ const ButtonReserve = ({bgcolor, onClick}) => {
               padding: 10px 20px;
               text-transform: uppercase;
               font-weight: bold;
-              transition: 0.3s;
+             
               margin:auto;
               cursor: pointer;
               

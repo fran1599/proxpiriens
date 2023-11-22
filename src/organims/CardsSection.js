@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CardsContainer from "./CardsContainer";
 
 const CardsSection = () => {
@@ -6,15 +7,12 @@ const CardsSection = () => {
       <section>
         <h2> Más populares:</h2>
         <CardsContainer />
-        <h3>Ver más!</h3>
       </section>
-      
 
       <style jsx>
         {`
           section {
             text-align: center;
-            background-color: var(--quinary-color);
             padding-bottom: 10px;
 
            }
@@ -25,17 +23,9 @@ const CardsSection = () => {
             margin-bottom: -10px;
             font-family: "Alfa Slab One", serif;
             letter-spacing: 0.1em;
-            color: #0f224c
+            color: var(--tertiary-color)
           }
 
-          h3 {
-            font-size: 1rem;
-            font-family: "Alfa Slab One", serif;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            color: #0f224c
-            
-          }
 
           @media only screen and (min-width: 767px) {
             h2 {

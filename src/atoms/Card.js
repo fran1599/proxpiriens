@@ -1,21 +1,10 @@
+import ButtonFavorite from "@/atoms/ButtonFavorite";
+import ButtonReserve from "@/atoms/ButtonReserve";
+import React, { useState } from "react";
 
-
-
-import { useState } from "react";
-import ButtonReserve from "./ButtonReserve";
-import ButtonFavorite from "./ButtonFavorite";
-
-
-const Card = ({ destino, addToCart }) => {
-
-  const { img, title, text, paquete, price, bgcolor, id } = destino;
-
+const Card = ({ destino }) => {
+  const { img, title, text, paquete, precio, bgcolor } = destino;
   const [isOpen, setIsOpen] = useState(false);
-
-  
-  const handleAddToCart = () => {
-    addToCart(id);
-  }
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -26,7 +15,7 @@ const Card = ({ destino, addToCart }) => {
     } else {
       return "Ver más...";
     }
-  }
+  };
 
   return (
     <>
@@ -42,10 +31,10 @@ const Card = ({ destino, addToCart }) => {
         <div className={`card-body ${isOpen ? "open" : ""}`}>
           <p>{paquete}</p>
           <h6>Precio final por persona</h6>
-          <h2>{price}</h2>
+          <h2>{precio}</h2>
           <h6>Incluye impuestos, tasas y cargos</h6>
           <div className="keypad">
-            <ButtonReserve onClick = {handleAddToCart} bgcolor={bgcolor} />
+            <ButtonReserve bgcolor={bgcolor} />
             <ButtonFavorite />
           </div>
         </div>
@@ -94,7 +83,7 @@ const Card = ({ destino, addToCart }) => {
           }
           h5 {
             color: var(--primary-color);
-            font-size: 0.6rem;
+            font-size: 0, 6rem;
             line-height: 0;
             font-family: "Roboto", sans-serif;
             font-style: italic;
@@ -103,7 +92,7 @@ const Card = ({ destino, addToCart }) => {
 
           h6 {
             color: var(--primary-color);
-            font-size: 0.7rem;
+            font-size: 0, 7rem;
             line-height: 0;
             font-family: "Roboto", sans-serif;
             margin: 10px 0;
