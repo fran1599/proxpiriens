@@ -20,16 +20,6 @@ export default function Home({Component , pageProps}) {
       </Head>
       <main>
 
-      <Card destino={{
-        
-    id:1,
-    img: "/img/cards/Card-Bariloche.jpg",
-    title: "Bariloche",
-    text: "Paisajes, colores y belleza natural en Bariloche",
-    paquete: "8 días / 7 noches, Vuelo directo Buenos Aires / Rosario - Bariloche, Gran Hotel Panamericano",
-    price: "$289.467",
-    bgcolor: "var(--primary-color)",
-      }}/>
       
       <style jsx global>{`
           body {
