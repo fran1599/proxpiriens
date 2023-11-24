@@ -3,7 +3,7 @@ import ButtonReserve from "@/atoms/ButtonReserve";
 import React, { useState } from "react";
 
 const Card = ({ destino }) => {
-  const { img, title, text, paquete, precio, bgcolor } = destino;
+  const { id, img, title, text, paquete, precio, bgcolor } = destino;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -19,7 +19,7 @@ const Card = ({ destino }) => {
 
   return (
     <>
-      <figure className={`figure ${isOpen ? "open" : ""}`}>
+      <figure className={`figure ${isOpen ? "open" : ""}`} key={id}>
         <img src={img} alt={title} />
         <div>
           <figcaption>
@@ -83,7 +83,7 @@ const Card = ({ destino }) => {
           }
           h5 {
             color: var(--primary-color);
-            font-size: 0, 6rem;
+            font-size: 1rem;
             line-height: 0;
             font-family: "Roboto", sans-serif;
             font-style: italic;

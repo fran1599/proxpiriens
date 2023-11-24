@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from 'react';
 
-// Lista de rutas de imágenes para el carousel es local y está en el directorio del proyecto.
+// Lista de rutas de imágenes para el carousel es local y está en el directorio del proyecto. 
 const images = [
   '/img/Carousel1/Ruta-40.webp',
-  '/img/Carousel1/Tucuman-San-Javier.webp',
-  '/img/Carousel1/Chubut.webp',
-  '/img/Carousel1/Mendoza.webp',
-  '/img/Carousel1/Catamarca.webp',
-  '/img/Carousel1/Tucuman.webp',
   '/img/Carousel1/Jujuy.webp',
-  '/img/Carousel1/Santa-Cruz-Calafate.webp',
+  '/img/Carousel1/Catamarca.webp',
+  '/img/Carousel1/Chubut.webp',
+  '/img/Carousel1/Neuquen.webp',
+  '/img/Carousel1/Mendoza.webp',
   '/img/Carousel1/Misiones.webp',
-  '/img/Carousel1/Neuquen.webp'
+  '/img/Carousel1/Santa-Cruz-Calafate.webp',
+  '/img/Carousel1/Tucuman.webp',
+  '/img/Carousel1/Tucuman-San-Javier.webp'
 ];
-
+//Cambio de colores de letras
 const colors = [
-  { h1: 'white', h2: 'yellow' },
-  { h1: 'black', h2: 'red' },
-  { h1: 'blue', h2: 'white' },
-  { h1: 'green', h2: 'yellow' },
-  { h1: 'red', h2: 'white' },
-  { h1: 'white', h2: 'blue' },
-  { h1: 'yellow', h2: 'black' },
-  { h1: 'orange', h2: 'white' },
-  { h1: 'pink', h2: 'black' },
-  { h1: 'purple', h2: 'white' }
+  { h1: '#F4F4F8', h2: '#D7B860' },
+  { h1: '#5B2747', h2: '#CAB3A9' },
+  { h1: '#4F5A5D', h2: '#845C41' },
+  { h1: '#22517C', h2: '#284902' },
+  { h1: '#878459', h2: '#325076' },
+  { h1: '#B3BACB', h2: '#F1E5DB' },
+  { h1: '#C4B457', h2: '#04356F' },
+  { h1: '#8A4118', h2: '#FDFCF9' },
+  { h1: '#F0F1F4', h2: '#9D948C' },
+  { h1:'#000000' , h2:  '#F61118'}
 ];
 
 const Carousel1 = () => {
-  // Este es un estado para realizar el seguimiento al índice actual de la imagen
+  // El Estado rastrea el índice actual de la imagen.
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Función nombrada nextSlide para avanzar al siguiente slide
@@ -52,7 +52,7 @@ const Carousel1 = () => {
   }, []);
 
   const currentColor = colors[currentIndex];
-
+  
   return (
     <>
       <div className="carousel-container">
@@ -153,7 +153,7 @@ const Carousel1 = () => {
         }
       `}</style>
     </>
-  );
+ );
 };
 
 export default Carousel1;
