@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import NavBar from "@/organims/NavBar";
-import ShoppingCart from "@/organims/Cart";
+import ShoppingCart from "@/molecules/shoppingCart/Cart";
+
 
 
 
