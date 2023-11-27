@@ -1,0 +1,51 @@
+/* Estilos para las Reviews y las estrellas de Valoraciones de Clientes*/
+@font-face {
+    font-family: 'San Francisco Pro Display';
+    src: url('/fonts/SanFranciscoProDisplay-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  
+  .review-card {
+    font-family: 'San Francisco Pro Display';
+    border: 1px solid #b3426c;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .review-avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .star-rating {
+    font-size: 24px;
+  }
+  
+  .star-filled {
+    color: gold;
+  }
+  
+  .star-empty {
+    color: #ccc;
+  }
+    
+    .review-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
