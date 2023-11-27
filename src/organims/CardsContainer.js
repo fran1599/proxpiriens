@@ -62,7 +62,7 @@ const CardsContainer = () => {
       </div>
 
       <button>
-        <Link href="/destinos">
+        <Link href="/shoppingCart">
           Conocé todos nuestros destinos
         </Link>
       </button>
