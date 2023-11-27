@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import CardsSection from "@/organims/CardsSection";
 import NavBar from "@/organims/NavBar";
-import DestinosContainer from "@/organims/DestinosContainer";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,6 +21,7 @@ export default function Home() {
 
     <NavBar />     
     <CardsSection />
+  
    
         <style jsx global>{`
           body {

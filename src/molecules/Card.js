@@ -31,7 +31,7 @@ const Card = ({ destino }) => {
         <div className={`card-body ${isOpen ? "open" : ""}`}>
           <p>{paquete}</p>
           <h6>Precio final por persona</h6>
-          <h2>{precio}</h2>
+          <h2>${precio}</h2>
           <h6>Incluye impuestos, tasas y cargos</h6>
           <div className="keypad">
             <ButtonReserve bgcolor={bgcolor} />

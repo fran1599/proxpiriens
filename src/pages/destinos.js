@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import NavBar from "@/organims/NavBar";
-import DestinosSection from "@/organims/DestinosSection";
+import ShoppingCart from "@/organims/shoppingCart";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,7 +19,7 @@ export default function Home() {
       <main>
 
     <NavBar />     
-    <DestinosSection/>
+    <ShoppingCart />
    
         <style jsx global>{`
           body {

@@ -6,7 +6,7 @@
       "title": "Bariloche",
       "text": "Paisajes, colores y belleza natural en Bariloche",
       "paquete": "8 días / 7 noches, Vuelo directo Buenos Aires / Rosario - Bariloche, Gran Hotel Panamericano",
-      "precio": "$289.467",
+      "precio": "289467",
       "bgcolor": "var(--primary-color)"
     },
     {
@@ -15,7 +15,7 @@
       "title": "Buenos Aires",
       "text": "Una mágica ciudad para descubrir",
       "paquete": "4 días / 3 noches, Vuelo directo desde todo el país, Hotel HR Luxor Buenos Aires",
-      "precio": "$140.544",
+      "precio": "140544",
       "bgcolor": "var(--primary-color)"
     },
     {
@@ -24,7 +24,7 @@
       "title": "Cerro Siete Colores",
       "text": "Purmamarca ( cerro 7 colores) y Salinas Grandes",
       "paquete": "9 días / 8 noches, Vuelos desde Buenos Aires, Quebrada de Humahuaca, Purmamarca, Cuesta de Lipan y Salinas Grandes, Hostal de los colores",
-      "precio": "$260.430",
+      "precio": "260430",
       "bgcolor": "var(--primary-color)"
     },
     {
@@ -33,7 +33,7 @@
       "title": "Córdoba",
       "text": "Paisajes, colores y naturaleza en Córdoba",
       "paquete": "5 días / 4 noches, Vuelo directo Buenos Aires / Rosario - Córdoba, Villa Cabrera Apart & Suites",
-      "precio": "$218.185",
+      "precio": "218185",
       "bgcolor": "var(--primary-color)"
     },
     {
@@ -42,7 +42,7 @@
       "title": "Gualeguaychú",
       "text": "Viví los mejores carnavales del país",
       "paquete": "3 días / 2 noches, Toda la fiesta inigualable de los carnavales, Hotel Gualeguaychu",
-      "precio": "$110.560",
+      "precio": "110560",
       "bgcolor": "var(--primary-color)"
     },
 
@@ -52,7 +52,7 @@
       "title": "Iguazú",
       "text": "Puerto iguazú y una dosis de aventura",
       "paquete": "4 días / 3 noches, Hotel el Libertador, Excursiones por el lado Argentino y Brasilero incluídas.",
-      "precio": "$215.900",
+      "precio": "215900",
       "bgcolor": "var(--primary-color)"
     },
 
@@ -62,7 +62,7 @@
         "title": "Mendoza",
         "text": "Vení a disfrutar de la ruta del vino",
         "paquete": "5 días / 4 noches, Vuelo directo Buenos Aires / Rosario, Relax, buen vino y gastronomía, Hotel Provincial",
-        "precio": "$199.928",
+        "precio": "199928",
         "bgcolor": "var(--primary-color)"
       },
 
@@ -72,7 +72,7 @@
         "title": "Perito Moreno",
         "text": "Vení a conocer una de las maravillas naturales de Argentina",
         "paquete": "7 días / 6 noches, Vuelo directo Buenos Aires, Hospedaje en Calafate Parque Hotel, excursión sobre el glaciar y en barco",
-        "precio": "$421.650",
+        "precio": "421650",
         "bgcolor": "var(--primary-color)"
       },
 
@@ -82,7 +82,7 @@
         "title": "Puerto Pirámides",
         "text": "La majestuosidad del océano y las ballenas",
         "paquete": "4 días / 3 noches, Vuelo + alojamiento en el hotel Océano Patagonia by Nordic, excursión en lancha al océano",
-        "precio": "$402.183",
+        "precio": "402183",
         "bgcolor": "var(--primary-color)"
       },
 
@@ -92,7 +92,7 @@
         "title": "Ruta 40",
         "text": "Un recorrido por la Ruta más hermosa del país",
         "paquete": "7 días / 6 noches, Vuelo directo a Bariloche, motorhome con todo incluído, desde Bariloche hasta el Chaltén, grupos reducidos",
-        "precio": "$523.342",
+        "precio": "523342",
         "bgcolor": "var(--primary-color)"
       },
 
@@ -102,7 +102,7 @@
         "title": "Ushuaia",
         "text": "Un lugar mágico durante todo el año",
         "paquete": "6 días / 5 noches, Vuelo + hospedaje en el Hotel Wyndham Garden a los pies del glaciar Martial",
-        "precio": "$485.000",
+        "precio": "485000",
         "bgcolor": "var(--primary-color)"
       },
 
@@ -112,10 +112,11 @@
         "title": "Valle de la Luna",
         "text": "Ischigualasto - Parque triásico",
         "paquete": "3 días / 2 noches, Salida en micro desde todo el país, incluye excursión por el Parque Natural Ischigualasto",
-        "precio": "$320.560",
+        "precio": "320560",
         "bgcolor": "var(--primary-color)"
       }
   ],
+
 
   "cart": []
 }
