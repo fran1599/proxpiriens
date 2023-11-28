@@ -92,7 +92,7 @@ const Card = ({ destino, addToCart }) => {
           }
           h5 {
             color: var(--primary-color);
-            font-size: 0, 6rem;
+            font-size: 0.6rem;
             line-height: 0;
             font-family: "Roboto", sans-serif;
             font-style: italic;
@@ -101,7 +101,7 @@ const Card = ({ destino, addToCart }) => {
 
           h6 {
             color: var(--primary-color);
-            font-size: 0, 7rem;
+            font-size: 0.7rem;
             line-height: 0;
             font-family: "Roboto", sans-serif;
             margin: 10px 0;

@@ -15,10 +15,10 @@ export const cartInitialState = {
 
     cart: [],
 
-    favorites: [],
+    favorites: [],        
    
-};
-    
+};         
+
 export const cartReducer = (state, action) => {
     switch (action.type) {
 

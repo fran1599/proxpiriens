@@ -1,6 +1,8 @@
+
+
 import axios from "axios";
 import Destino from "@/molecules/Destino";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const DestinosContainer = () => {
   const [destinos, setDestinos] = useState([]);

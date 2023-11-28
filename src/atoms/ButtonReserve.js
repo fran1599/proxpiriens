@@ -6,10 +6,10 @@ const ButtonReserve = ({bgcolor, onClick}) => {
       onClick(); // Llama a la función onClick si se proporciona
     }
   }
-    
+                                   
   return (
       <>
-        <button onclick ={handleButtonClick}>Reservar ahora</button>
+        <button onClick ={handleButtonClick}>Reservar ahora</button>
         <style jsx>
           {`
             button {

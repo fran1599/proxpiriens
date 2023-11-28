@@ -1,3 +1,5 @@
+
+
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import NavBar from "@/organims/NavBar";

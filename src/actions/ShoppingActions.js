@@ -10,4 +10,4 @@ export const TYPES =  {
     CLEAR_CART: 'CLEAR_CART',
     ADD_TO_FAVORITES: 'ADD_TO_FAVORITES',
   
-}   
+}               

@@ -1,4 +1,5 @@
-import React from "react";
+
+
 import DestinosContainer from "./DestinosContainer";
 
 const DestinosSection = () => {

@@ -3,7 +3,7 @@
 
 const CartItem = ({data, deleteToCart}) => {
 
-    const {name, price, id, quantity} = data;
+    const {name, price, id, quantity, img} = data;
     
                     
     return (
@@ -20,7 +20,7 @@ const CartItem = ({data, deleteToCart}) => {
             </div>
         </figcaption>
       </figure>
-                
+                             
         
         <style jsx>
         {`
@@ -87,4 +87,4 @@ const CartItem = ({data, deleteToCart}) => {
   
   
   export default CartItem
-  
+      

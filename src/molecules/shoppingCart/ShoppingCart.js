@@ -35,22 +35,22 @@ const ShoppingCart = () => {
 
 
   return (
-    <>
+  <>
     <div>
     <h3>PRODUCTOS</h3>
     <div className="box-cart box-grid">
-      {products.map((product) => (<Card key={product.id} destino={product} addToCart={addToCart}/> ))}
+      {products.map((product) => (<Card key={product.id} destino={product} addToCart={addToCart} img={product.img}/> ))}
     </div>
     <h3>CARRITO</h3>
     <button onClick={clearToCart}>LIMPIAR CARRITO</button>
     <div className="box-cart box-grid">
-        {cart.map((item,index) => (<CartItem key={index} data={item} deleteToCart={deleteToCart} />))}
+        {cart.map((item,index) => (<CartItem key={index} data={item} deleteToCart={deleteToCart} img={item.img} />))}
     </div>
     
     </div>
 
-
-
+                  
+  
     <style jsx> {`
   .box-cart {
     padding: 1rem;
