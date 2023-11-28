@@ -1,10 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import NavBar from "@/organims/NavBar";
-import ShoppingCart from "@/molecules/shoppingCart/Cart";
-
-
-
+import Cart from "@/organims/Cart";
+import Products from "@/organims/Products";
 
 
 
@@ -20,10 +18,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-
-    <NavBar />     
-    <ShoppingCart />
-   
+        <NavBar />
+        <Cart />
+        <Products />
+        
         <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;

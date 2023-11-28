@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import CardsSection from "@/organims/CardsSection";
 import NavBar from "@/organims/NavBar";
+import Products from "@/organims/Products";
+import Cart from "@/organims/Cart";
 
 
 
@@ -21,7 +23,8 @@ export default function Home() {
 
     <NavBar />     
     <CardsSection />
-  
+    <Products />
+    <Cart />
    
         <style jsx global>{`
           body {

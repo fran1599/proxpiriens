@@ -1,14 +1,17 @@
+import { useContext } from "react";
+import { CartContext } from "@/context/CartContext.js"; 
+import { ProductsContext } from "@/context/ProductsContext";
 import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
-import { CartContext } from "@/context/CartContext";
 import React, { useState } from "react";
-import { useContext } from "react";
 
-const Card = ({product}) => {
+const Card = ({ product }) => {
+  const { addToCart} = useContext(CartContext);
+  const { product } = useContext( ProductsContext );
   
   
   
-  const { id, img, title, text, paquete, precio, } = product;
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -21,8 +24,6 @@ const Card = ({product}) => {
       return "Ver más...";
     }
   };
-  
-  const { addToCart} = useContext(CartContext);
 
   return (
     <>
@@ -41,7 +42,7 @@ const Card = ({product}) => {
           <h2>${precio}</h2>
           <h6>Incluye impuestos, tasas y cargos</h6>
           <div className="keypad">
-          <ButtonReserve  key={product.id} product={product} addToCart={addToCart}/>
+            <ButtonReserve  key={product.id} product={product} addToCart={addToCart}/>
             <ButtonFavorite />
           </div>
         </div>

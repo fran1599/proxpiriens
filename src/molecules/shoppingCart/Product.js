@@ -1,4 +1,10 @@
+
+import ButtonFavorite from "@/atoms/ButtonFavorite";
+import ButtonReserve from "@/atoms/ButtonReserve";
+import { ProductsContext } from "@/context/ProductsContext";
+
 const Product = ({ product, addToCart }) => {
+ 
   const { id, img, title, text, paquete, precio, bgcolor } = product;
 
   return (
@@ -17,9 +23,8 @@ const Product = ({ product, addToCart }) => {
           <h2>${precio}</h2>
           <h6>Incluye impuestos, tasas y cargos</h6>
           <div className="keypad">
-            <button onClick={() => addToCart(id)}>Reservar un pasajero</button>
-            {/* <ButtonReserve bgcolor={bgcolor} />
-            <ButtonFavorite /> */}
+            <ButtonReserve  key={product.id} product={product} addToCart={addToCart}/>
+            <ButtonFavorite />
           </div>
         </div>
       </section>
