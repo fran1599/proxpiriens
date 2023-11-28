@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/ReviewCard.css';
-import StarRating from './atoms/StarRating';
+import '../styles/ReviewCard.css';
+import StarRating from '../atoms/StarRating';
 
 const ReviewCard = ({ review }) => {
   const { author, comment, rating, imageUrl } = review;

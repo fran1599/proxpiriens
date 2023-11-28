@@ -1,11 +1,4 @@
 /* Estilos para las Reviews y las estrellas de Valoraciones de Clientes*/
-@font-face {
-    font-family: 'San Francisco Pro Display';
-    src: url('/fonts/SanFranciscoProDisplay-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
   .app {
     display: flex;
     flex-direction: column;
