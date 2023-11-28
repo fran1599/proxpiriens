@@ -1,5 +1,6 @@
 import React from 'react';
-import './styles/ReviewCard.css';
+import '../styles/Home.module.css';
+
 /* Estrellas Valoración Puntuaciones de clientes*/
 
 const StarRating = ({ rating }) => {
