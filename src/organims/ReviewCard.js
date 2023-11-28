@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/ReviewCard.css';
+import '../styles/Home.module.css';
 import StarRating from '../atoms/StarRating';
 
 const ReviewCard = ({ review }) => {
