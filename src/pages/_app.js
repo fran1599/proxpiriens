@@ -6,7 +6,6 @@ import { shoppingReducer } from "@/molecules/shoppingCart/ShoppingReducer";
 import { shoppingInitialState } from "@/molecules/shoppingCart/ShoppingInitialState";
 import { CartContext } from "@/context/CartContext";
 import { ProductsContext } from "@/context/ProductsContext";
-import Cart from "@/organims/Cart";
 import NavBar from "@/organims/NavBar";
 
 export default function App({ Component, pageProps }) {
@@ -16,7 +15,7 @@ export default function App({ Component, pageProps }) {
 
   const updateState = async () => {
     const ENDPOINTS = {
-      products: "http://localhost:5000/destinos",
+      products: "http://localhost:5000/products",
       cart: "http://localhost:5000/cart",
     };
 
@@ -61,7 +60,7 @@ export default function App({ Component, pageProps }) {
         value={{ cart, addToCart, deleteFromCart, clearCart, handleClick }}>
         <NavBar />     
         <Component {...pageProps} />
-        <Cart/>
+        
       </CartContext.Provider>
     </ProductsContext.Provider>
   );

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import Link from "next/link";
+import Cart from "@/organims/Cart";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+
+        <Cart/>
         <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;

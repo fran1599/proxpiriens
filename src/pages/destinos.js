@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Products from "@/organims/Products";
-import Link from "next/link";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,15 +17,13 @@ export default function Home() {
       <main>
     
         <Products />
-
+        
         <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;
           }
           
-          .carrito {
-            display: none;
-          }
+          
           
         `}</style>
       </main>

@@ -7,6 +7,7 @@ import CardsSection from "@/organims/CardsSection";
 
 
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -22,15 +23,14 @@ export default function Home() {
 
    
     <CardsSection/>
-  
-   
+    
         <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;
           }
           
           .carrito {
-            display: none;
+           
           }
         `}</style>
       </main>
