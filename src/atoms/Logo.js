@@ -1,18 +1,25 @@
-import Link from "next/link";
+import ImageComponent from "@/components/ImageComponent";
 
-const Logo = () => (
+
+const Logo = ({size}) => (
   <>
-  <div className="logo">
-    <h1 onClick={<Link href="/"></Link>}>nuestro logo</h1>
+  <div className="logo" style={{ width: size, height: size }}>
+    <ImageComponent />
   </div>
-
-
-<style jsx>{`
-    .logo {
-      font-size: 24px;
-    }
-`}</style>
+    
+  <style jsx>{`
+      .logo {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (max-width: 768px) {
+        .logo {
+          display: none;  
+        }
+  `}</style>
 </>
 )
-
+     
 export default Logo;
