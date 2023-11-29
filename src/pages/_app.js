@@ -7,6 +7,7 @@ import { shoppingInitialState } from "@/molecules/shoppingCart/ShoppingInitialSt
 import { CartContext } from "@/context/CartContext";
 import { ProductsContext } from "@/context/ProductsContext";
 import NavBar from "@/organims/NavBar";
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 export default function App({ Component, pageProps }) {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);

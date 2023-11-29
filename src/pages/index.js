@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import CardsSection from "@/organims/CardsSection";
+import Carousel1 from "@/organims/Carousel1";
+
 
 
 
@@ -21,7 +23,7 @@ export default function Home() {
       </Head>
       <main>
 
-   
+    <Carousel1 />
     <CardsSection/>
     
         <style jsx global>{`
