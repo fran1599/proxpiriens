@@ -1,6 +1,9 @@
+
+
+
 import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
-import React from "react";
+
 
 const Destino = ({ destino }) => {
   const { id, img, title, text, paquete, precio, bgcolor } = destino;

@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import NavBar from '@/organims/NavBar'
 import ShoppingCart from '@/molecules/shoppingCart/ShoppingCart';
+import DestinosContainer from '@/organims/DestinosContainer';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,9 @@ export default function Home({Component , pageProps}) {
           }
       `}</style>
 
-       <ShoppingCart />
+      <DestinosContainer />
+
+      <ShoppingCart />
       
       </main>
       </>
