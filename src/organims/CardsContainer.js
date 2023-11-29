@@ -17,10 +17,6 @@ const CardsContainer = () => {
           <Card key={product.id} product={product} addToCart={addToCart} />
         ))}
       </div>
-
-      <button>
-        <Link href="/shoppingCart">Conocé todos nuestros destinos</Link>
-      </button>
       
       <style jsx>{`
         div {

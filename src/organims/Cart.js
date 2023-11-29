@@ -18,7 +18,7 @@ const Cart = () => {
 
       <style jsx>
         {`
-
+          
           .box {
             padding: 1rem;
             margin: 1rem;

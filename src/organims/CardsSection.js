@@ -1,13 +1,28 @@
 import Link from "next/link";
 import CardsContainer from "./CardsContainer";
+import { useState } from "react";
+import Cart from "./Cart";
 
 const CardsSection = () => {
+ 
+  // const [visible, setVisible] = useState(false);
+  // const toggleVisibility = () => {
+  //   setVisible(!visible);
+  // };
+
+ 
   return (
     <>
       <section>
         <h2> Más populares:</h2>
         <CardsContainer />
+        {/* <button onClick={toggleVisibility}>
+          {visible ? "Cerrar carrito" : "Abrir carrito"}
+        </button> */}
+
       </section>
+    
+      {/* {visible && <Cart />} */}
 
       <style jsx>
         {`

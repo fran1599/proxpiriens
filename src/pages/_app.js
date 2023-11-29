@@ -7,6 +7,7 @@ import { shoppingInitialState } from "@/molecules/shoppingCart/ShoppingInitialSt
 import { CartContext } from "@/context/CartContext";
 import { ProductsContext } from "@/context/ProductsContext";
 import Cart from "@/organims/Cart";
+import NavBar from "@/organims/NavBar";
 
 export default function App({ Component, pageProps }) {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
@@ -57,8 +58,8 @@ export default function App({ Component, pageProps }) {
   return (
     <ProductsContext.Provider value={{ products }}>
       <CartContext.Provider
-        value={{ cart, addToCart, deleteFromCart, clearCart, handleClick }}
-      >
+        value={{ cart, addToCart, deleteFromCart, clearCart, handleClick }}>
+        <NavBar />     
         <Component {...pageProps} />
         <Cart/>
       </CartContext.Provider>

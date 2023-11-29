@@ -1,9 +1,9 @@
-
+import Link from "next/link";
 
 const Logo = () => (
   <>
   <div className="logo">
-    <h1>nuestro logo</h1>
+    <h1 onClick={<Link href="/"></Link>}>nuestro logo</h1>
   </div>
 
 
