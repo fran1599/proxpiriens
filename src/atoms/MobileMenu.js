@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
+import Link from "next/link";
 
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
@@ -42,10 +43,15 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             <div className="bar"></div>
         </button>
         <ul className="menu-items">
+            
+            <li><Link href="/">Inicio</Link></li>
             <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Destinos</a></li>
+            <li><Link href="/destinos">Destinos</Link></li>
             <li><a href="#">Paquetes</a></li>
             <li><a href="#">Contacto</a></li>
+            <li><Link href="/shoppingCart">Ir al carrito</Link></li>
+
+
             <li className="menu-button">
               <button className="cart-button" onClick={handleCart}>
               <FontAwesomeIcon icon={faShoppingCart} />

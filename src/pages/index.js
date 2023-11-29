@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import CardsSection from "@/organims/CardsSection";
 import Carousel1 from "@/organims/Carousel1";
+import Footer from "@/organims/footer";
 
 
 
@@ -25,6 +26,7 @@ export default function Home() {
 
     <Carousel1 />
     <CardsSection/>
+    <Footer />
     
         <style jsx global>{`
           body {
