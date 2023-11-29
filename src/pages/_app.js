@@ -1,11 +1,12 @@
-import '@/styles/globals.css'
-import { useReducer , useEffect} from "react";
+import "@/styles/globals.css";
+import { useReducer, useEffect } from "react";
 import { TYPES } from "@/actions/ShoppingActions";
 import axios from "axios";
 import { shoppingReducer } from "@/molecules/shoppingCart/ShoppingReducer";
 import { shoppingInitialState } from "@/molecules/shoppingCart/ShoppingInitialState";
-import { CartContext } from "@/context/CartContext"; // Importa el contexto que creaste
-import { ProductsContext } from '@/context/ProductsContext';
+import { CartContext } from "@/context/CartContext";
+import { ProductsContext } from "@/context/ProductsContext";
+import Cart from "@/organims/Cart";
 
 export default function App({ Component, pageProps }) {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
@@ -34,8 +35,8 @@ export default function App({ Component, pageProps }) {
   };
 
   useEffect(() => {
-    updateState ()
-  }, [])
+    updateState();
+  }, []);
 
   const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id });
   const deleteFromCart = (id, all = false) => {
@@ -47,21 +48,20 @@ export default function App({ Component, pageProps }) {
   };
 
   const clearCart = () => dispatch({ type: TYPES.CLEAR_CART });
-  
+
   const handleClick = () => {
     clearCart();
     updateState();
   };
-  
 
   return (
-    // Envuelve el componente con los componentes ProductsContext.Provider y CartContext.Provider
     <ProductsContext.Provider value={{ products }}>
       <CartContext.Provider
-        value={{ cart, addToCart, deleteFromCart, clearCart, handleClick, useReducer }}>
-          <Component {...pageProps} />
+        value={{ cart, addToCart, deleteFromCart, clearCart, handleClick }}
+      >
+        <Component {...pageProps} />
+        <Cart/>
       </CartContext.Provider>
     </ProductsContext.Provider>
   );
-
 }

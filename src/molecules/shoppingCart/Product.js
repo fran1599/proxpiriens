@@ -1,7 +1,7 @@
 
 import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
-import { ProductsContext } from "@/context/ProductsContext";
+
 
 const Product = ({ product, addToCart }) => {
  

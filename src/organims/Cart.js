@@ -2,23 +2,23 @@ import { useContext } from "react";
 import CartItem from "@/molecules/shoppingCart/CartItem";
 import { CartContext } from "@/context/CartContext";
 
-const CartPage = () => {
-  const { cart, deleteFromCart, handleClick, clearCart, useReducer} = useContext(
-    CartContext
-  );
- 
+const Cart = () => {
+  const { cart, deleteFromCart, handleClick } = useContext(CartContext);
+
   return (
-    <>
-      <h3>Carrito</h3>
-      <div className="box">
-        {cart.map((item, i) => (
-          <CartItem key={i} item={item} deleteFromCart={deleteFromCart} />
-        ))}
-      </div>
-      <button onClick={handleClick}>Limpiar Carrito</button>
+    <div className="carrito">
+        <h3>Carrito de Compras</h3>
+        <div className="box">
+          {cart.map((item, i) => (
+            <CartItem key={i} item={item} deleteFromCart={deleteFromCart} />
+          ))}
+        </div>
+        <button onClick={handleClick}>Limpiar Carrito</button>
+      
 
       <style jsx>
         {`
+
           .box {
             padding: 1rem;
             margin: 1rem;
@@ -43,10 +43,12 @@ const CartPage = () => {
             padding: 1rem;
             color: var(--white-color);
           }
+
+        
         `}
       </style>
-    </>
+    </div>
   );
 };
 
-export default CartPage;
+export default Cart;

@@ -1,10 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import NavBar from "@/organims/NavBar";
-import Cart from "@/organims/Cart";
 import Products from "@/organims/Products";
-
-
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,15 +17,41 @@ export default function Home() {
       </Head>
       <main>
         <NavBar />
-        <Cart />
         <Products />
-        
+
+        <button>
+          <Link href="/">Volver al inicio</Link>
+        </button>
+
         <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;
+          }
+
+          button {
+            color: white;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 1px 2px 2px black;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-bottom: 30px;
+            cursor: pointer;
+          }
+          button:hover {
+            transform: traslateY(2px);
+            box-shadow: none;
+          }
+
+          Cart {
+            display: "none"
           }
         `}</style>
       </main>
     </>
   );
 }
+
