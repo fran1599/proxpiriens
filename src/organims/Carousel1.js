@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 // Lista de rutas de imágenes para el carousel es local y está en el directorio del proyecto. 
 const images = [
-  '/img/Carousel1/Ruta-40.webp',
-  '/img/Carousel1/Jujuy.webp',
-  '/img/Carousel1/Catamarca.webp',
-  '/img/Carousel1/Chubut.webp',
-  '/img/Carousel1/Neuquen.webp',
-  '/img/Carousel1/Mendoza.webp',
-  '/img/Carousel1/Misiones.webp',
-  '/img/Carousel1/Santa-Cruz-Calafate.webp',
-  '/img/Carousel1/Tucuman.webp',
-  '/img/Carousel1/Tucuman-San-Javier.webp'
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21288&authkey=%21AAGYVpqUYxp9TRw&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21284&authkey=%21AGEUiQanj3Vtjow&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21283&authkey=%21ANHxHabg8QwcQy0&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21282&authkey=%21ABNYMowcjTsUXXE&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21286&authkey=%21ALNgOQ2deLYwYMY&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21285&authkey=%21APVvF4SQL4YjtRU&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21287&authkey=%21ACiR82nFudWqCsM&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21289&authkey=%21AMI_WORx_DpSVn8&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21290&authkey=%21AHrdpTdYlknrs1E&width=1024',
+  'https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21291&authkey=%21AGZLMpatcAXW4-8&width=1024'
 ];
 //Cambio de colores de letras
 const colors = [
