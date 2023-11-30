@@ -113,6 +113,31 @@ const Footer = () => {
       .oferta-turistica, .categorias, .club-de-beneficios, .nosotros{
         display: none;
       }
+
+
+      @media screen and (min-width: 1023px){
+
+        .oferta-turistica, .categorias, .club-de-beneficios, .nosotros{
+          display: block;
+        }
+
+        .banner {
+          padding: 0.5rem;
+        }
+
+        .footer-links {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          padding: 5rem 5rem 0 4rem;
+          gap: 1.5rem;
+          font-size: 1.1rem;
+        }
+        .footer-links > img {
+          width: 15vw;
+          padding-top: 0;
+          margin-bottom: 3rem;
+        }
+      }
       `}</style>
       </>
     );
