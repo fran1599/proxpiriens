@@ -80,12 +80,11 @@ const Footer = () => {
 
       a {
         text-decoration: none;
-        color: #000000;
       }
 
       .banner {
         width: 100%;
-        background-image: url(./Footer-Proxpiriens.png);
+        background-image: url(./img/footer/Footer-Proxpiriens.png);
         display: flex;
         justify-content: space-around;
         
@@ -99,6 +98,9 @@ const Footer = () => {
         filter: invert(32%) sepia(31%) saturate(1523%) hue-rotate(290deg) brightness(99%) contrast(86%);
       }
 
+
+
+
       .footer-links > img {
         width: 60vw;
         padding-top: 7rem;
@@ -108,6 +110,10 @@ const Footer = () => {
       .footer-links {
         font-size: 1.5rem;
         padding-bottom: 2rem
+      }
+
+      h2 {
+        margin-bottom: 1rem;
       }
 
       .oferta-turistica, .categorias, .club-de-beneficios, .nosotros{
