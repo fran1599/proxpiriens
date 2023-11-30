@@ -70,6 +70,50 @@ const Footer = () => {
   
 </div>
 </footer>
+
+<style jsx>{`
+
+      .footer {
+        display: grid;
+        place-items: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+
+      .banner {
+        width: 100%;
+        background-image: url(./Footer-Proxpiriens.png);
+        display: flex;
+        justify-content: space-around;
+        
+      }
+
+      .banner > a > img {
+        width: 70px;
+      }
+
+      .icons-banner, .icons-banner-fullscreen {
+        filter: invert(32%) sepia(31%) saturate(1523%) hue-rotate(290deg) brightness(99%) contrast(86%);
+      }
+
+      .footer-links > img {
+        width: 60vw;
+        padding-top: 7rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-links {
+        font-size: 1.5rem;
+        padding-bottom: 2rem
+      }
+
+      .oferta-turistica, .categorias, .club-de-beneficios, .nosotros{
+        display: none;
+      }
+      `}</style>
       </>
     );
   };
