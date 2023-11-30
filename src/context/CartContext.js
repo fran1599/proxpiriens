@@ -1,6 +1,6 @@
 
-import { createContext, useContext, useReducer } from 'react';
-
+import { createContext, useContext, useEffect, useReducer } from 'react';
+import axios from "axios";
 // Definir el contexto
 const CartContext = createContext();
 
@@ -97,19 +97,72 @@ export const shoppingReducer = (state, action) => {
       return state;
   }
 
-  
-
-
 };
+
+
+
+
+
+
+
 
 // Componente proveedor que utiliza el contexto y el reducer
 export const ShoppingProvider = ({ children }) => {
   const [state, dispatch] = useReducer(shoppingReducer, initialState);
-
   console.log('Estado inicial del carrito:', state);
+  
+  const updateState = async () => {
+    const ENDPOINTS = {
+      products: "http://localhost:5000/products",
+      cart: "http://localhost:5000/cart",
+    };
+
+    const resProducts = await axios.get(ENDPOINTS.products),
+      resCart = await axios.get(ENDPOINTS.cart);
+
+    const productsList = await resProducts.data,
+      cartItems = await resCart.data;
+
+    dispatch({
+      type: ACTIONS.READ_STATE,
+      payload: {
+        products: productsList,
+        cart: cartItems,
+      },
+    });
+  };
+
+  useEffect(() => {
+    updateState();
+  }, []);
+
+
+  const addToCart = (id) => {
+    dispatch({ type: ACTIONS.ADD_TO_CART, payload: id });
+  };
+
+  const deleteToCart = (id, all = false) => {
+    if (all) {
+      dispatch({ type: ACTIONS.REMOVE_ALL_FROM_CART, payload: id });
+    } else {
+      dispatch({ type: ACTIONS.REMOVE_ONE_FROM_CART, payload: id });
+    }
+  };
+
+  const clearToCart = () => {
+    dispatch({ type: ACTIONS.CLEAR_CART });
+  };
+
+  const handleClick = () => {
+    clearToCart();
+    updateState();
+  };
+
+
+
 
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick }}>
       {children}
     </CartContext.Provider>
   );

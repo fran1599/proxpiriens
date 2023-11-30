@@ -2,8 +2,8 @@
 
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import NavBar from "@/organims/NavBar";
-import DestinosSection from "@/organims/DestinosSection";
+import Product from "@/molecules/Product";
+import ProductsPage from "@/organims/ProductsPage";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,9 +18,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-
-    <NavBar />     
-    <DestinosSection/>
+      <ProductsPage />
+   
    
         <style jsx global>{`
           body {

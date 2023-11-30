@@ -3,7 +3,7 @@ import ButtonReserve from "@/atoms/ButtonReserve";
 
 
 const Product = ({ product, addToCart }) => {
-  const { id, img, title, text, paquete, precio, bgcolor } = product;
+  const { id, img, title, text, paquete, price, bgcolor } = product;
 
   return (
     <>
@@ -14,7 +14,7 @@ const Product = ({ product, addToCart }) => {
         <p className="destination-text">{text}</p>
         <p className="destination-paquete">{paquete}</p>
         <h6>Precio final por persona</h6>
-        <h2>{precio}</h2>
+        <h2>${price}</h2>
         <h6>Incluye impuestos, tasas y cargos</h6>
         <div className="keypad">
           <ButtonReserve key={product.id} product={product} addToCart={addToCart}/>
@@ -22,7 +22,7 @@ const Product = ({ product, addToCart }) => {
         </div>
       </div>
     </section>
-    <style jsx>
+       <style jsx>
         {`
           .destination {
             display: flex;

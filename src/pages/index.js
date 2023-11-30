@@ -1,10 +1,8 @@
 
-
+import Link from "next/link";
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-
-import ShoppingCart from '@/molecules/shoppingCart/ShoppingCart';
-import DestinosContainer from '@/organims/DestinosContainer';
+import CardsSection from "@/organims/CardsSection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,8 +22,9 @@ export default function Home({Component , pageProps}) {
             font-family: ${inter}, sans-serif;
           }
       `}</style>
-
-      <ShoppingCart />
+      <button> <Link href="/destinos">Ir al carrito</Link></button>
+      <CardsSection/>
+          
 
       
           
