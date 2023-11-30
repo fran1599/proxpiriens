@@ -72,7 +72,6 @@ const Carousel1 = () => {
           width: 100%;
           margin: 0 auto;
           padding: 20px;
-          box-shadow: 0px 0px 10px 0px rgba(2, 2, 5, 0.1);
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -88,15 +87,15 @@ const Carousel1 = () => {
 
         .carousel-img {
           object-fit: cover;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-          transition: 0.5s;
+          
+          transition: 0.2s;
           width: 96vw;
-          height: 88vh;
+          height: 80vh;
         }
 
         .carousel-img:hover {
           transform: scale(1.005);
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
         }
 
         .carousel-button {
@@ -127,7 +126,6 @@ const Carousel1 = () => {
         @media screen and (max-width: 768px) {
           .carousel-slide img {
             width: 100%;
-            height: auto;
           }
           h1 {
             font-size: 1.5rem;

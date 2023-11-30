@@ -2,7 +2,7 @@
   "destinos": [
     {
       "id": 1,
-      "img": "/img/cards/Card-Bariloche.jpg",
+      "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21296&authkey=%21ADxVixAxNMchiV8&width=600",
       "title": "Bariloche",
       "text": "Paisajes, colores y belleza natural en Bariloche",
       "paquete": "8 días / 7 noches, Vuelo directo Buenos Aires / Rosario - Bariloche, Gran Hotel Panamericano",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "img": "/img/cards/Card-Buenos-Aires.jpg",
+      "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21297&authkey=%21AFq0IFT6ozrEDlQ&width=600",
       "title": "Buenos Aires",
       "text": "Una mágica ciudad para descubrir",
       "paquete": "4 días / 3 noches, Vuelo directo desde todo el país, Hotel HR Luxor Buenos Aires",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "img": "/img/cards/Card-Cerro-Siete-Colores.jpg",
+      "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21295&authkey=%21AOkMoEMT_K2_J-g&width=600",
       "title": "Cerro Siete Colores",
       "text": "Purmamarca ( cerro 7 colores) y Salinas Grandes",
       "paquete": "9 días / 8 noches, Vuelos desde Buenos Aires, Quebrada de Humahuaca, Purmamarca, Cuesta de Lipan y Salinas Grandes, Hostal de los colores",
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "img": "/img/cards/Card-Cordoba.jpg",
+      "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21300&authkey=%21ADLNyvbKIeIeUPk&width=600",
       "title": "Córdoba",
       "text": "Paisajes, colores y naturaleza en Córdoba",
       "paquete": "5 días / 4 noches, Vuelo directo Buenos Aires / Rosario - Córdoba, Villa Cabrera Apart & Suites",
@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "img": "/img/cards/Card-Gualeguaychu.jpg",
+      "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21299&authkey=%21AGlRv2rSzX6fEbY&width=600",
       "title": "Gualeguaychú",
       "text": "Viví los mejores carnavales del país",
       "paquete": "3 días / 2 noches, Toda la fiesta inigualable de los carnavales, Hotel Gualeguaychu",
@@ -48,7 +48,7 @@
 
     {
       "id": 6,
-      "img": "/img/cards/Card-Iguazu.jpg",
+      "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21298&authkey=%21AEUR99Zo-VooHOg&width=600",
       "title": "Iguazú",
       "text": "Puerto iguazú y una dosis de aventura",
       "paquete": "4 días / 3 noches, Hotel el Libertador, Excursiones por el lado Argentino y Brasilero incluídas.",
@@ -58,7 +58,7 @@
 
     {
         "id": 7,
-        "img": "/img/cards/Card-Mendoza.jpeg",
+        "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21301&authkey=%21AEZHBKgbd9jScWQ&width=600",
         "title": "Mendoza",
         "text": "Vení a disfrutar de la ruta del vino",
         "paquete": "5 días / 4 noches, Vuelo directo Buenos Aires / Rosario, Relax, buen vino y gastronomía, Hotel Provincial",
@@ -68,7 +68,7 @@
 
       {
         "id": 8,
-        "img": "/img/cards/Card-Perito-Moreno.jpg",
+        "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21302&authkey=%21AHhx5o1Io0S-xBg&width=600",
         "title": "Perito Moreno",
         "text": "Vení a conocer una de las maravillas naturales de Argentina",
         "paquete": "7 días / 6 noches, Vuelo directo Buenos Aires, Hospedaje en Calafate Parque Hotel, excursión sobre el glaciar y en barco",
@@ -78,7 +78,7 @@
 
       {
         "id": 9,
-        "img": "/img/cards/Card-Puerto-Piramides.jpg",
+        "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21303&authkey=%21ANIa9FoazezfqDE&width=600",
         "title": "Puerto Pirámides",
         "text": "La majestuosidad del océano y las ballenas",
         "paquete": "4 días / 3 noches, Vuelo + alojamiento en el hotel Océano Patagonia by Nordic, excursión en lancha al océano",
@@ -88,7 +88,7 @@
 
       {
         "id": 10,
-        "img": "/img/cards/Card-Ruta40.jpg",
+        "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21304&authkey=%21AJ2vVml2SXnrFjM&width=600",
         "title": "Ruta 40",
         "text": "Un recorrido por la Ruta más hermosa del país",
         "paquete": "7 días / 6 noches, Vuelo directo a Bariloche, motorhome con todo incluído, desde Bariloche hasta el Chaltén, grupos reducidos",
@@ -98,7 +98,7 @@
 
       {
         "id": 11,
-        "img": "/img/cards/Card-Ushuaia.jpg",
+        "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21305&authkey=%21AAiLE8cBPdXEsjI&width=600",
         "title": "Ushuaia",
         "text": "Un lugar mágico durante todo el año",
         "paquete": "6 días / 5 noches, Vuelo + hospedaje en el Hotel Wyndham Garden a los pies del glaciar Martial",
@@ -108,7 +108,7 @@
 
       {
         "id": 12,
-        "img": "/img/cards/Card-Valle-De-La-Luna.jpg",
+        "img": "https://onedrive.live.com/embed?resid=26221A9FCBB03F5A%21306&authkey=%21AHxtqe8n1tqcQ-g&width=600",
         "title": "Valle de la Luna",
         "text": "Ischigualasto - Parque triásico",
         "paquete": "3 días / 2 noches, Salida en micro desde todo el país, incluye excursión por el Parque Natural Ischigualasto",
