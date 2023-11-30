@@ -1,9 +1,10 @@
+import { title } from "process";
 
 
 
-const CartItem = ({data, deleteToCart}) => {
+const CartItem = ({item, deleteToCart}) => {
 
-    const {name, price, id, quantity, img} = data;
+    const {title, price, id, quantity, img} = item;
     
                     
     return (
@@ -12,8 +13,8 @@ const CartItem = ({data, deleteToCart}) => {
         <div className="img-container"><img src= {img} alt="imagen de destino" />
         </div>
         <figcaption>
-            <h4>{name}</h4>
-            <div className="Price">${price}x{quantity} = ${price*quantity}</div>
+            <h4>{title}</h4>
+            <div className="Price">${price} x {quantity} = ${price * quantity}</div>
             <div className="keypad">
             <button className = "Buybutton" onClick ={() => deleteToCart(id)}>ELIMINAR</button>
             <button className = "Buybutton" onClick ={() => deleteToCart(id, true)}>LIMPIAR</button>
@@ -27,7 +28,7 @@ const CartItem = ({data, deleteToCart}) => {
           figure {
             width: 95%;
             height: auto;
-            background-color: var(--white-color);
+            background-color: var(--black-color);
             border: 1px solid black;
             border-radius: 10px;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);

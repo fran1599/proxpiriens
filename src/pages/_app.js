@@ -1,5 +1,5 @@
 
-import { ShoppingProvider } from '@/context/CartContext'
+import {ShoppingProvider} from '@/context/CartContext'
 import '@/styles/globals.css'
 
 

@@ -1,37 +1,39 @@
-
-
 import axios from "axios";
 
 import { useShopping, ACTIONS } from "@/context/CartContext";
-import Card from "@/atoms/Card";
+
 import CartItem from "./CartItem";
+
 import { useEffect } from "react";
-import Destino from "../Destino";
-       
+import Product from "../Product";
+
 const ShoppingCart = () => {
   const { state, dispatch } = useShopping();
 
   const updateState = async () => {
     const ENDPOINTS = {
-      products: "http://localhost:5000/destinos",
-      cart: "http://localhost:5000/cart"
+      products: "http://localhost:5000/products",
+      cart: "http://localhost:5000/cart",
     };
-  
-      const resDestinos = await axios.get(ENDPOINTS.products)
-          resCart= await axios.get(ENDPOINTS.cart);
-      const destinosList = resDestinos.data,
-          cartItems = resCart.data;
-      
-      const data = {
-        products: destinosList,
-        cart: cartItems
-      }
-      dispatch({type: ACTIONS.READ_STATE, payload: data})
+
+    const resProducts = await axios.get(ENDPOINTS.products),
+      resCart = await axios.get(ENDPOINTS.cart);
+
+    const productsList = await resProducts.data,
+      cartItems = await resCart.data;
+
+    dispatch({
+      type: ACTIONS.READ_STATE,
+      payload: {
+        products: productsList,
+        cart: cartItems,
+      },
+    });
   };
-                                   
+
   useEffect(() => {
-    updateState()
-  }, [])
+    updateState();
+  }, []);
 
   const { products, cart } = state;
 
@@ -50,31 +52,37 @@ const ShoppingCart = () => {
   const clearToCart = () => {
     dispatch({ type: ACTIONS.CLEAR_CART });
   };
-   
+
+  const handleClick = () => {
+    clearToCart();
+    updateState();
+  };
+
+
   return (
     <>
       <div>
         <h3>DESTINOS</h3>
-        <div className="box-cart box-grid">
-          {products.map((destino) => (
-            <Destino key={destino.id} destino={destino} addToCart={() => addToCart(destino.id)} img={destino.img} />
+        <div className="grid-responsive">
+          {products.map((product) => (
+            <Product key={product.id} product={product} addToCart={addToCart} />
           ))}
         </div>
         <h3>CARRITO</h3>
-        <button onClick={clearToCart}>LIMPIAR CARRITO</button>
-        <div className="box-cart box-grid">
-          {cart.map((item, index) => (
-            <CartItem key={index} data={item} deleteToCart={() => deleteToCart(item.id)} img={item.img} />
+        <button onClick={handleClick}>LIMPIAR CARRITO</button>
+        <div className="grid-responsive">
+         {cart.map((item, i) => (
+            <CartItem key={i} item={item} deleteToCart={deleteToCart} />
           ))}
         </div>
       </div>
 
       <style jsx>{`
-        .box-cart {
-          padding: 1rem;
-          margin: 1rem;
-          box-shadow: 0 0 1rem #00000025 inset;
+        .grid-responsive {
+          display: flex;
+          flex-wrap: wrap;
         }
+
 
         .box-grid {
           display: grid;

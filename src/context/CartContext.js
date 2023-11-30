@@ -82,7 +82,7 @@ export const shoppingReducer = (state, action) => {
 
     case ACTIONS.CLEAR_CART:
     
-      return cartInitialState
+      return initialState
 
     // case ACTIONS.ADD_TO_FAVORITES:{
       
@@ -96,6 +96,10 @@ export const shoppingReducer = (state, action) => {
     default:
       return state;
   }
+
+  
+
+
 };
 
 // Componente proveedor que utiliza el contexto y el reducer
@@ -119,3 +123,4 @@ export const useShopping = () => {
   }
   return context;
 };
+

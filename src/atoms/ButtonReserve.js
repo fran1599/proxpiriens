@@ -1,15 +1,16 @@
 
      
-const ButtonReserve = ({bgcolor, onClick}) => {
-  const handleButtonClick = () => {
-    if (onClick) {
-      onClick(); // Llama a la función onClick si se proporciona
-    }
-  }
-                                   
+import { useContext } from "react";
+import { CartContext } from "@/context/CartContext.js";
+
+
+const ButtonReserve = ({ product, addToCart}) => {
+  
+  const { id, bgcolor } = product;
+   
   return (
       <>
-        <button onClick ={handleButtonClick}>Reservar ahora</button>
+        <button onClick={() => addToCart(id)}>Reservar ahora</button>
         <style jsx>
           {`
             button {

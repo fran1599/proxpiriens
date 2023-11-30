@@ -1,7 +1,7 @@
 
 
 import axios from "axios";
-import Destino from "@/molecules/Destino";
+import Destino from "@/molecules/Product";
 import { useEffect, useState } from "react";
 
 const DestinosContainer = () => {
