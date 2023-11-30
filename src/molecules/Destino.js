@@ -25,7 +25,7 @@ const Destino = ({ destino }) => {
         </div>
       </div>
     </section>
-
+      
       <style jsx>
       {`
         .destination {

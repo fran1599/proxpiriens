@@ -10,13 +10,14 @@ const DestinosContainer = () => {
   const updateState = async () => {
     const ENDPOINTS = {
       destinos: "http://localhost:5000/destinos",
+      cart: "http://localhost:5000/cart"
     };
+  
+      const resDestinos = await axios.get(ENDPOINTS.destinos)
+          resCart= await axios.get(ENDPOINTS.cart);
+      const destinosList = resDestinos.data,
+          cartItems = resCart.data;
 
-    const resDestinos = await axios.get(ENDPOINTS.destinos);
-
-    const destinosList = await resDestinos.data;
-
-    setDestinos(destinosList);
   };
 
   useEffect(() => {
@@ -47,3 +48,5 @@ const DestinosContainer = () => {
 
 export default DestinosContainer;
    
+
+    

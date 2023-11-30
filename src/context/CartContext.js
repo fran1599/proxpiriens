@@ -13,16 +13,25 @@ const initialState = {
 
 // Acciones para modificar el estado del carrito
 export const ACTIONS = {
+  READ_STATE: 'READ_STATE',
   ADD_TO_CART: 'ADD_TO_CART',
   REMOVE_ONE_FROM_CART: 'REMOVE_ONE_FROM_CART',
   REMOVE_ALL_FROM_CART: 'REMOVE_ALL_FROM_CART',
   CLEAR_CART: 'CLEAR_CART',
   ADD_TO_FAVORITES: 'ADD_TO_FAVORITES',
 };
-
+           
 // Reducer para gestionar el estado del carrito
-const shoppingReducer = (state, action) => {
+export const shoppingReducer = (state, action) => {
   switch (action.type) {
+
+    case ACTIONS.READ_STATE:{
+      return {
+        ...state,
+        products: action.payload.products,
+        cart: action.payload.cart
+      }
+    }
 
     case ACTIONS.ADD_TO_CART:{
 
@@ -43,7 +52,7 @@ const shoppingReducer = (state, action) => {
         cart: [...state.cart, {...newItem, quantity: 1}]
       };
     }
-
+    
     case ACTIONS.REMOVE_ONE_FROM_CART:{
     
     const itemToRemove = state.cart.find((item) => item.id === action.payload)

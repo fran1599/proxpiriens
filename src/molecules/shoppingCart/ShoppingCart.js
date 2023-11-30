@@ -1,18 +1,37 @@
 
 
-
+import axios from "axios";
 
 import { useShopping, ACTIONS } from "@/context/CartContext";
 import Card from "@/atoms/Card";
 import CartItem from "./CartItem";
-
+import { useEffect } from "react";
+import Destino from "../Destino";
+       
 const ShoppingCart = () => {
   const { state, dispatch } = useShopping();
 
-  if (!state || typeof state !== 'object' || !('cart' in state)) {
-    // Manejar el caso donde state no es un objeto iterable o no tiene la propiedad 'cart'
-    return <p>Error: No se pudo obtener el estado del carrito</p>;
-  }
+  const updateState = async () => {
+    const ENDPOINTS = {
+      products: "http://localhost:5000/destinos",
+      cart: "http://localhost:5000/cart"
+    };
+  
+      const resDestinos = await axios.get(ENDPOINTS.products)
+          resCart= await axios.get(ENDPOINTS.cart);
+      const destinosList = resDestinos.data,
+          cartItems = resCart.data;
+      
+      const data = {
+        products: destinosList,
+        cart: cartItems
+      }
+      dispatch({type: ACTIONS.READ_STATE, payload: data})
+  };
+                                   
+  useEffect(() => {
+    updateState()
+  }, [])
 
   const { products, cart } = state;
 
@@ -31,14 +50,14 @@ const ShoppingCart = () => {
   const clearToCart = () => {
     dispatch({ type: ACTIONS.CLEAR_CART });
   };
-
+   
   return (
     <>
       <div>
         <h3>DESTINOS</h3>
         <div className="box-cart box-grid">
           {products.map((destino) => (
-            <Card key={destino.id} destino={destino} addToCart={() => addToCart(destino.id)} img={destino.img} />
+            <Destino key={destino.id} destino={destino} addToCart={() => addToCart(destino.id)} img={destino.img} />
           ))}
         </div>
         <h3>CARRITO</h3>

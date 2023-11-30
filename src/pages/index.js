@@ -2,8 +2,7 @@
 
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import NavBar from '@/organims/NavBar'
+
 import ShoppingCart from '@/molecules/shoppingCart/ShoppingCart';
 import DestinosContainer from '@/organims/DestinosContainer';
 
@@ -26,12 +25,13 @@ export default function Home({Component , pageProps}) {
           }
       `}</style>
 
-      <DestinosContainer />
-
       <ShoppingCart />
+
       
+          
       </main>
       </>
 
   )
 }
+                              
