@@ -31,7 +31,7 @@ const ElegirnosSection = () => {
 
     .custom-list li {
       padding-left: 30px;
-      background-image: url('img/tilde.png');
+      background-image: url('../../public/img/Elegirnos/tilde.png');
       background-size: 20px 20px;
       background-repeat: no-repeat;
       background-position: 0 50%;
@@ -42,7 +42,7 @@ const ElegirnosSection = () => {
     .custom-list li:nth-child(3),
     .custom-list li:nth-child(4),
     .custom-list li:nth-child(5) {
-      background-image: url('img/tilde.png');
+      background-image: url('../../public/img/Elegirnos/tilde.png');
     }
   `;
 
@@ -69,9 +69,9 @@ const ElegirnosSection = () => {
 
           <div className="right-column">
             <img
-              src=".\img\Puerto pirámides.jpg"
+              src="../../public/img/Elegirnos/Puerto pirámides.jpg"
               alt="Avistamiento de ballena franca austral"
-              style={{ width: '20%', height: 'auto' }}
+              style={{ width: '85%', height: 'auto' }}
             />
           </div>
         </div>
