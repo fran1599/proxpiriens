@@ -26,6 +26,8 @@ export default function Home() {
     <NavBar />     
     <Carousel1/>
     <CardsSection/>
+    <ReviewCard/>
+    <ElegirnosSection/>
     <Footer/>
 
         <style jsx global>{`
