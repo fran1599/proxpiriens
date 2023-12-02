@@ -20,18 +20,12 @@ const ShoppingCart = () => {
         </div>
         <button onClick={handleClick}>LIMPIAR CARRITO</button>
       </div>
-
-      {/* <div className="carrito">
-        <h3>Carrito de Compras</h3>
-        <div className="box">
-          {cart.map((item, i) => (
-            <CartItem key={i} item={item} deleteToCart={deleteToCart} />
-          ))}
-        </div>
+      <div className = "items-count">
+        {
+          cart.length === 0 ? ("Carrito vacío") : (
+            <> <h4>Productos en el carrito:</h4> <p>{cart.reduce((total, item) => total + item.quantity, 0)}</p> </> )
+        }
       </div>
-      <button onClick={handleClick}>Limpiar Carrito</button> */}
-
-
       <style jsx>{`
         .grid-responsive {
           display: flex;
