@@ -2,15 +2,16 @@
 import React, {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useRouter } from 'next/router';
+import Link from "next/link";
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
+    const [chartSearch, setChartSearch] = useState(false)
+
     const handleSearch = () => {
          setChartSearch(!chartSearch);
     };
    
     const handleCart = () => {
-      router.push('/src/pages/shoppingCart.js')
         // Agregar lógica para abrir el carrito
         console.log('Abrir carrito');   
     };
@@ -42,7 +43,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
         </button>
         <ul className="menu-items">
             <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Destinos</a></li>
+            <li><Link href="/destinos">Destinos</Link></li>
             <li><a href="#">Paquetes</a></li>
             <li><a href="#">Contacto</a></li>
             <li className="menu-button">
@@ -73,6 +74,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
         .mobile-menu {
           display: flex;
           align-items: center;
+          z-index: 2;
         }
   
         .menu-toggle {

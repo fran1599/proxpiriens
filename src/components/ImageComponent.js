@@ -1,11 +1,12 @@
 
-
+import Link from 'next/link';
 import React from 'react';
 
 const ImageComponent = () => (
   <>
     <div className="image-container">
-      <img src="/LogoNightBakground.png" alt="Descripción de la imagen" className='logo-image' />
+    <Link href="/"><img src="/LogoNightBakground.png" alt="Descripción de la imagen" className='logo-image' /></Link>
+      
     </div>
 
    <style jsx>{`

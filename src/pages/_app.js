@@ -8,6 +8,7 @@ import '@/styles/globals.css'
 export default function App({ Component, pageProps }) {
   return (
     <ShoppingProvider>
+    <NavBar />
     <Component {...pageProps} />
     <ShoppingCart />
     </ShoppingProvider>

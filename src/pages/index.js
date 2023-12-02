@@ -1,5 +1,4 @@
 
-import Link from "next/link";
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import CardsSection from "@/organims/CardsSection";
@@ -22,7 +21,7 @@ export default function Home({Component , pageProps}) {
             font-family: ${inter}, sans-serif;
           }
       `}</style>
-      <button> <Link href="/destinos">Ir al carrito</Link></button>
+      
       <CardsSection/>
           
 
