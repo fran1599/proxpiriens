@@ -8,6 +8,7 @@ import NavBar from "@/organims/NavBar";
 import Footer from '@/organims/footer';
 import ReviewCard from '@/organims/ReviewCard';
 import ElegirnosSection from '@/organims/ElegirnosSection';
+import BarilocheSection from '@/organims/BarilocheSection';
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,6 +29,7 @@ export default function Home() {
     <CardsSection/>
     <ReviewCard/>
     <ElegirnosSection/>
+    <BarilocheSection/>
     <Footer/>
 
         <style jsx global>{`
