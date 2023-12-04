@@ -1,11 +1,15 @@
 
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
+import { useShopping } from '@/context/CartContext';
+
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
-    const [chartSearch, setChartSearch] = useState(false)
+    const [chartSearch, setChartSearch] = useState(false);
+
+    const { cartCount } = useShopping();  
 
     const handleSearch = () => {
          setChartSearch(!chartSearch);
@@ -47,9 +51,12 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             <li><a href="#">Paquetes</a></li>
             <li><a href="#">Contacto</a></li>
             <li className="menu-button">
+              <Link href= "../molecules/shoppingCart/ShoppingCart.js">
               <button className="cart-button" onClick={handleCart}>
               <FontAwesomeIcon icon={faShoppingCart} />
+              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
               </button>
+              </Link>
             </li>
             <li className="menu-button">
               <button className="search-button" onClick={handleSearch}>
@@ -184,6 +191,16 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
   
           .mobile-menu .menu-toggle {
             display: flex; /* Mostrar solo en dispositivos móviles */
+          }
+
+          .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ff0000;
+            color: #ffffff;
+            border-radius: 50%;
+            padding: 0.2rem 0.5rem;
           }
 
         }
