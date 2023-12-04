@@ -6,8 +6,6 @@ import Logo from '../atoms/Logo';
 import MobileMenu from '../atoms/MobileMenu';
 
 
-
-
 const NavBar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);

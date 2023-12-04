@@ -4,9 +4,9 @@ import { useShopping } from "@/context/CartContext";
 
 import CartItem from "./CartItem";
 
-
+   
 const ShoppingCart = () => {
-  const { state, deleteToCart,handleClick } = useShopping();
+  const { state, deleteToCart, handleClick } = useShopping();
   const { cart } = state;
   
   return (

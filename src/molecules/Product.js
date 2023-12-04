@@ -1,6 +1,6 @@
 import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
-
+                        
 
 const Product = ({ product, addToCart }) => {
   const { id, img, title, text, paquete, price, bgcolor } = product;

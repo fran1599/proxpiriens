@@ -6,7 +6,7 @@ const CartItem = ({item, deleteToCart}) => {
 
     const {title, price, id, quantity, img} = item;
     
-                    
+                       
     return (
       <>
         <figure>

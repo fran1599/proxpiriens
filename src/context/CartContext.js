@@ -1,5 +1,5 @@
 
-import { createContext, useContext, useEffect, useReducer } from 'react';
+import { createContext, useContext, useEffect, useReducer, useState } from 'react';
 import axios from "axios";
 // Definir el contexto
 const CartContext = createContext();
@@ -102,13 +102,11 @@ export const shoppingReducer = (state, action) => {
 
 
 
-
-
-
-
 // Componente proveedor que utiliza el contexto y el reducer
 export const ShoppingProvider = ({ children }) => {
   const [state, dispatch] = useReducer(shoppingReducer, initialState);
+  const [cartCount, setCartCount] = useState(0);
+
   console.log('Estado inicial del carrito:', state);
   
   const updateState = async () => {
@@ -137,8 +135,10 @@ export const ShoppingProvider = ({ children }) => {
   }, []);
 
 
-  const addToCart = (id) => {
+  const addToCart = (id) => {  
     dispatch({ type: ACTIONS.ADD_TO_CART, payload: id });
+    setCartCount(cartCount + 1);
+    alert(`¡El destino ha sido agregado al carrito!`);
   };
 
   const deleteToCart = (id, all = false) => {
@@ -162,7 +162,7 @@ export const ShoppingProvider = ({ children }) => {
 
 
   return (
-    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick }}>
+    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick, cartCount }}>
       {children}
     </CartContext.Provider>
   );
