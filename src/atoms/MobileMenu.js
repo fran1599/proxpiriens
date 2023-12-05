@@ -54,10 +54,10 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
               <Link href= "/cart">
               <button className="cart-button" onClick={handleCart}>
               <FontAwesomeIcon icon={faShoppingCart} />
+              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
               </button>
               </Link>
             </li>
-            <li>{cartCount > 0 && <span className="cart-count">{cartCount}</span>}</li>
             <li className="menu-button">
               <button className="search-button" onClick={handleSearch}>
               <FontAwesomeIcon icon={faSearch} />

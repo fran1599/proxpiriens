@@ -1,20 +1,25 @@
-
-
-
 import Card from "@/atoms/Card";
 import { useShopping } from "@/context/CartContext";
-
+import React from "react";
+import { useWindowSize } from "react-use";
 
 const CardContainer = () => {
- 
-  const { state, addToCart} = useShopping();
+  const { state, addToCart } = useShopping();
   const { products } = state;
 
+  // Usamos el hook useWindowSize para obtener el ancho de la pantalla
+  const { width } = useWindowSize();
+
+  // Dividimos el ancho de la pantalla por 330 para obtener el número máximo de tarjetas
+  const maxCards = Math.floor(width / 330);
+  const cardsToShow = width < 660 ? 4 : maxCards;
+  // Tomamos solo ese número de elementos del arreglo de productos
+  const productsToShow = products.slice(0, cardsToShow);
 
   return (
     <>
       <div>
-        {products.map((product) => (
+        {productsToShow.map((product) => (
           <Card key={product.id} product={product} addToCart={addToCart} />
         ))}
       </div>
@@ -70,5 +75,3 @@ const CardContainer = () => {
 };
 
 export default CardContainer;
-
-
