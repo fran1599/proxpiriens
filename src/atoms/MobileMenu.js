@@ -51,7 +51,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             <li><a href="#">Paquetes</a></li>
             <li><a href="#">Contacto</a></li>
             <li className="menu-button">
-              <Link href= "../molecules/shoppingCart/ShoppingCart.js">
+              <Link href= "/cart">
               <button className="cart-button" onClick={handleCart}>
               <FontAwesomeIcon icon={faShoppingCart} />
               {cartCount > 0 && <span className="cart-count">{cartCount}</span>}

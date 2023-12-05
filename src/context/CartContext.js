@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useEffect, useReducer, useState } from 'react';
 import axios from "axios";
 // Definir el contexto
@@ -105,7 +104,8 @@ export const shoppingReducer = (state, action) => {
 // Componente proveedor que utiliza el contexto y el reducer
 export const ShoppingProvider = ({ children }) => {
   const [state, dispatch] = useReducer(shoppingReducer, initialState);
-  const [cartCount, setCartCount] = useState(0);
+  const { cart } = state;
+  const cartCount = cart.reduce((total, item) => total + item.quantity, 0)
 
   console.log('Estado inicial del carrito:', state);
   
@@ -137,20 +137,25 @@ export const ShoppingProvider = ({ children }) => {
 
   const addToCart = (id) => {  
     dispatch({ type: ACTIONS.ADD_TO_CART, payload: id });
-    setCartCount(cartCount + 1);
-    alert(`¡El destino ha sido agregado al carrito!`);
+    
+    alert(`¡Pasajero agregado al carrito!`);
   };
 
   const deleteToCart = (id, all = false) => {
     if (all) {
       dispatch({ type: ACTIONS.REMOVE_ALL_FROM_CART, payload: id });
+      alert(`¡El destino ha sido eliminado del carrito!`);
     } else {
       dispatch({ type: ACTIONS.REMOVE_ONE_FROM_CART, payload: id });
+      alert(`¡Pasajero eliminado del carrito!`);
+      
     }
   };
 
   const clearToCart = () => {
     dispatch({ type: ACTIONS.CLEAR_CART });
+    alert(`¡Eliminaste todos los destinos del carrito!`);
+    
   };
 
   const handleClick = () => {
