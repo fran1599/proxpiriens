@@ -1,9 +1,9 @@
 
 import {useState, useEffect} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
 import { useShopping } from '@/context/CartContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
@@ -54,17 +54,16 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
               <Link href= "/cart">
               <button className="cart-button" onClick={handleCart}>
               <FontAwesomeIcon icon={faShoppingCart} />
-              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
               </button>
               </Link>
             </li>
+            <li>{cartCount > 0 && <span className="cart-count">{cartCount}</span>}</li>
             <li className="menu-button">
               <button className="search-button" onClick={handleSearch}>
               <FontAwesomeIcon icon={faSearch} />
               </button>
             </li>
         </ul>
-
           {chartSearch && (
             <div className="search-box">
               {/* Cuadro de búsqueda */}
@@ -73,15 +72,19 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
               <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
               </form>
             </div>
+           
           )}
+
+          
+
       </div>
+  
         
       <style jsx>{`
       
         .mobile-menu {
           display: flex;
           align-items: center;
-          z-index: 2;
         }
   
         .menu-toggle {
@@ -113,8 +116,10 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             cursor: pointer;
             color: #fff;
             font-size: 16px;
-            margin: 0;
+            margin: 0;       
             padding: 0;
+            
+            
           }
     
           .cart-button {

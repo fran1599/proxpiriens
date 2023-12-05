@@ -19,7 +19,8 @@ const ShoppingCart = () => {
             <CartItem key={i} item={item} deleteToCart={deleteToCart} />
           ))}
         </div>
-        <button onClick={handleClick}>LIMPIAR CARRITO</button>
+        <button onClick={handleClick}>Terminar Reserva</button>
+        <button onClick={handleClick}>Limpiar Carrito</button>
       </div>
      
       <style jsx>{`

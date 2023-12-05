@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import ProductsPage from "@/organims/ProductsPage";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
       </Head>
       <main>
         <ProductsPage />
-
+        
         <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;
