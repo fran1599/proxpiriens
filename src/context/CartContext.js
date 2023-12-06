@@ -123,6 +123,7 @@ export const ShoppingProvider = ({ children }) => {
       resCart = await axios.get(ENDPOINTS.cart),
       resFavorites= await axios.get(ENDPOINTS.favorites);
 
+   
     const productsList = await resProducts.data,
       cartItems = await resCart.data,
       favoritesItems = await resFavorites.data;
