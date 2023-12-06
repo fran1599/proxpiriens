@@ -1,28 +1,25 @@
 
 
+import { useShopping } from '@/context/CartContext';
+import FavoriteItem from './FavoriteItem';
 
-import { useShopping } from "@/context/CartContext";
+const FavoritesList = () => {
 
-import CartItem from "./CartItem";
-
-   
-const ShoppingCart = () => {
   const { state, deleteToCart, handleClick } = useShopping();
-  const { cart } = state;
-  
+  const { favorites } = state;
+
   return (
     <>
-      <div className="cart">
-        <h3>CARRITO</h3>
+    <div className="favorites">
+        <h3>FAVORITOS</h3>
         <div className="grid-responsive">
-         {cart.map((item, i) => (
-            <CartItem key={i} item={item} deleteToCart={deleteToCart} />
+         {favorites.map((item, i) => (
+            <FavoriteItem key={i} item={item} deleteToCart={deleteToCart} />
           ))}
         </div>
-        <button onClick={handleClick}>Terminar Reserva</button>
         <button onClick={handleClick}>Limpiar Carrito</button>
       </div>
-        
+
       <style jsx>{`
         .grid-responsive {
           display: flex;
@@ -40,4 +37,4 @@ const ShoppingCart = () => {
   );
 };
 
-export default ShoppingCart;
+export default FavoritesList

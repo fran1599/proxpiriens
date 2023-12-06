@@ -55,6 +55,13 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
               </button>
               </Link>
             </li>
+            <li>
+              <Link href="/favorites">
+                <div className="favorites-icon-container">
+                  <img src="/icon/heart.png" alt="Favorites" className="favorites-icon" />
+                </div>
+              </Link>
+            </li>
             <li className="menu-button">
               <button className="search-button" onClick={handleSearch}>
               <img src="/icon/lupa.png" alt="find" className='find-image' />
@@ -63,7 +70,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
         </ul>
           {chartSearch && (
             <div className="search-box">
-              {/* Cuadro de búsqueda */}
+              {/* Cuadro de búsqueda */}  
               <form>
               <input type="text" placeholder="Buscar..." />
               <button type="submit"><img src="/icon/lupa.png" alt="find" className='find-image' /></button>
@@ -113,24 +120,17 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             border: none;
             cursor: pointer;
             color: #fff;
-            
             margin: 0;       
             padding: 0;
-            
-            
+  
           }
-    
-          
-
           .cart-image {
             height: 20px;
-           
-            
+
           }
           .find-image {
             height: 20px;
-        
-            
+
           }
 
         .menu-toggle.open .bar:nth-child(1) {
@@ -186,12 +186,23 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           color: #fff;
           font-size: 16px;
         }
+
+        .favorites-icon-container {
+          width: auto; 
+          height: auto;
+        }
+      
+        .favorites-icon {
+          width: 22px; 
+          height: auto;
+          cursor: pointer;
+        }
         
         @media (max-width: 768px) {
           .menu-items {
             display: none;
           }
-  
+        
           .mobile-menu.open .menu-items {
             display: flex;
             flex-direction: column;
@@ -201,11 +212,11 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             background-color: #333;
             padding: 10px;
           }
-  
+        
           .mobile-menu .menu-toggle {
             display: flex; /* Mostrar solo en dispositivos móviles */
           }
-
+        
           .cart-count {
             position: absolute;
             top: 0;
@@ -215,7 +226,18 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             border-radius: 50%;
             padding: 0.2rem 0.5rem;
           }
-
+        
+          .favorites-icon-container {
+            width: 20px; 
+            height: auto;
+            margin-right: 20px; 
+          }
+        
+          .favorites-icon {
+            width: 100%; 
+            height: auto;
+            cursor: pointer;
+          }
         }
       `}</style>
     </>
