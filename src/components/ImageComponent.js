@@ -5,7 +5,7 @@ import React from 'react';
 const ImageComponent = () => (
   <>
     <div className="image-container">
-    <Link href="/"><img src="/LogoNightBakground.png" alt="Descripción de la imagen" className='logo-image' /></Link>
+    <Link href="/"><img src="/LogoNightBakground.png" alt="logo proxpiriens" className='logo-image' /></Link>
       
     </div>
 

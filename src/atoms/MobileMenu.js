@@ -2,9 +2,6 @@
 import {useState, useEffect} from 'react';
 import Link from "next/link";
 import { useShopping } from '@/context/CartContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
-
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
     const [chartSearch, setChartSearch] = useState(false);
@@ -53,14 +50,14 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             <li className="menu-button">
               <Link href= "/cart">
               <button className="cart-button" onClick={handleCart}>
-              <FontAwesomeIcon icon={faShoppingCart} />
+              <img src="/icon/cart.png" alt="cart" className='cart-image' />
               {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
               </button>
               </Link>
             </li>
             <li className="menu-button">
               <button className="search-button" onClick={handleSearch}>
-              <FontAwesomeIcon icon={faSearch} />
+              <img src="/icon/lupa.png" alt="find" className='find-image' />
               </button>
             </li>
         </ul>
@@ -69,7 +66,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
               {/* Cuadro de búsqueda */}
               <form>
               <input type="text" placeholder="Buscar..." />
-              <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
+              <button type="submit"><img src="/icon/lupa.png" alt="find" className='find-image' /></button>
               </form>
             </div>
            
@@ -86,7 +83,8 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           display: flex;
           align-items: center;
         }
-  
+
+        
         .menu-toggle {
           background: none;
           border: none;
@@ -115,16 +113,26 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             border: none;
             cursor: pointer;
             color: #fff;
-            font-size: 16px;
+            
             margin: 0;       
             padding: 0;
             
             
           }
     
-          .cart-button {
-            margin-right: 20px;
+          
+
+          .cart-image {
+            height: 20px;
+           
+            
           }
+          .find-image {
+            height: 20px;
+        
+            
+          }
+
         .menu-toggle.open .bar:nth-child(1) {
           transform: rotate(-45deg) translate(-5px, 6px);
         }
