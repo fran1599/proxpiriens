@@ -2,7 +2,7 @@ import React from 'react';
 
 const BarilocheSection = () => {
   const styles = `
-    font-family: 'SF Pro Display, sans-serif';
+    font-family: "SF Pro Display, sans-serif";
 
     .bariloche-section {
       display: flex;
@@ -47,7 +47,7 @@ const BarilocheSection = () => {
           </div>
 
           <div className="right-column">
-            <h2>San Carlos de Bariloche</h2>
+            <h2>San Carlos de <span style={{ color: '#0f224c' }}>Bariloche</span></h2>
             <br/>
             <h3>Río Negro - Patagonia Argentina</h3>
             <br/>

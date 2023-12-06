@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//Opiniones de Clientes que compraron paquetes turísticos con nosotros
+
 const ReviewContainer = styled.div`
   text-align: center;
-  font-family: 'SF Pro Display, sans-serif';
+  font-family: "SF Pro Display, sans-serif";
 
   h2 {
     margin-bottom: 20px;
@@ -50,7 +52,7 @@ const Review = ({ name, rating, image, comment }) => (
 function App() {
   return (
     <ReviewContainer>
-      <h2>Las mejores Experiencias</h2>
+      <h2>Las mejores <span style={{ color: '#b3426c' }}>Experiencias</span></h2>
       <div className="reviews-container">
         <Review
           name="Laura S."

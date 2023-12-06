@@ -1,9 +1,11 @@
 import React from 'react';
 
+//Razones por las cuales los clientes deberían elegirnos
+
 const ElegirnosSection = () => {
   
   const styles = `
-  font-family: 'SF Pro Display, sans-serif';
+  font-family: "SF Pro Display, sans-serif";
 
     .elegirnos-section {
       display: flex;
@@ -58,7 +60,7 @@ const ElegirnosSection = () => {
       <div className="elegirnos-section">
         <div className="container">
           <div className="left-column">
-          <h2>Por qué <span style={{ color: '#FCC432' }}>Elegirnos</span></h2>
+          <h2>Por qué <span style={{ color: '#de9c2b' }}>Elegirnos</span></h2>
             <br/>
             <h3 style={{ fontFamily: 'SF Pro Display, sans-serif' }}>Somos una empresa líder en excursiones en toda Latinoamérica. Desde 2023 revolucionamos la industria del turismo en Argentina.</h3>
             <br/>
