@@ -1,12 +1,16 @@
 
 import React from 'react';
 
+
+
 const Footer = () => {
     return (
-      <>
       <footer className="footer">
         <div className="banner">
-          <img src="falta agregar ruta img" alt="Banner" />
+           <img src='' alt="Banner" />
+        </div>
+        <div>
+          <img src="../../public/LogoColorFloating.png" alt='logo' />
         </div>
         <div className="contact">
           <h2>Contacto</h2>
@@ -19,8 +23,9 @@ const Footer = () => {
         </div>
         
       </footer>
-      </>
     );
   };
+
+  
   
   export default Footer;
