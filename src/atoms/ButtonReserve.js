@@ -1,13 +1,10 @@
 
-                               
-import { useContext } from "react";
-import { CartContext } from "@/context/CartContext.js";
-
+   
 
 const ButtonReserve = ({ product, addToCart}) => {
   
   const { id, bgcolor } = product;
-   
+     
   return (
       <>
         <button onClick={() => addToCart(id)}>Reservar ahora</button>

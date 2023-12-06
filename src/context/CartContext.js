@@ -1,5 +1,9 @@
-import { createContext, useContext, useEffect, useReducer, useState } from 'react';
+
+
+import { createContext, useContext, useEffect, useReducer } from 'react';
+
 import axios from "axios";
+
 // Definir el contexto
 const CartContext = createContext();
 
@@ -83,15 +87,16 @@ export const shoppingReducer = (state, action) => {
     
       return initialState
 
-    // case ACTIONS.ADD_TO_FAVORITES:{
+    case ACTIONS.ADD_TO_FAVORITES:{
       
-    //   const newFavorite = state.products.find((product) => product.id === action.payload);
+      const newFavorite = state.products.find((product) => product.id === action.payload);
 
-    //   return { 
-    //     favorites: [...state.favorites, newFavorite] };
-    // }
+      return { 
+        ...state,
+        favorites: [...state.favorites, newFavorite],
+      };
+     }
 
-     
     default:
       return state;
   }
@@ -99,12 +104,10 @@ export const shoppingReducer = (state, action) => {
 };
 
 
-
-
 // Componente proveedor que utiliza el contexto y el reducer
 export const ShoppingProvider = ({ children }) => {
   const [state, dispatch] = useReducer(shoppingReducer, initialState);
-  const { cart } = state;
+  const { cart = [] } = state;
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0)
 
   console.log('Estado inicial del carrito:', state);
@@ -113,19 +116,24 @@ export const ShoppingProvider = ({ children }) => {
     const ENDPOINTS = {
       products: "http://localhost:5000/products",
       cart: "http://localhost:5000/cart",
+      favorites: "http://localhost:5000/favorites"
     };
 
     const resProducts = await axios.get(ENDPOINTS.products),
-      resCart = await axios.get(ENDPOINTS.cart);
+      resCart = await axios.get(ENDPOINTS.cart),
+      resFavorites= await axios.get(ENDPOINTS.favorites);
 
     const productsList = await resProducts.data,
-      cartItems = await resCart.data;
+      cartItems = await resCart.data,
+      favoritesItems = await resFavorites.data;
+  
 
     dispatch({
       type: ACTIONS.READ_STATE,
       payload: {
         products: productsList,
         cart: cartItems,
+        favorites: favoritesItems
       },
     });
   };
@@ -138,7 +146,7 @@ export const ShoppingProvider = ({ children }) => {
   const addToCart = (id) => {  
     dispatch({ type: ACTIONS.ADD_TO_CART, payload: id });
     
-    alert(`¡Pasajero agregado al carrito!`);
+    alert(`¡Destino agregado al carrito!`);
   };
 
   const deleteToCart = (id, all = false) => {
@@ -147,7 +155,7 @@ export const ShoppingProvider = ({ children }) => {
       alert(`¡El destino ha sido eliminado del carrito!`);
     } else {
       dispatch({ type: ACTIONS.REMOVE_ONE_FROM_CART, payload: id });
-      alert(`¡Pasajero eliminado del carrito!`);
+      alert(`¡Destino eliminado del carrito!`);
       
     }
   };
@@ -158,16 +166,20 @@ export const ShoppingProvider = ({ children }) => {
     
   };
 
+  const addToFavorites = (id) => {  
+    dispatch({ type: ACTIONS.ADD_TO_FAVORITES, payload: id });
+    
+    alert(`¡Destino agregado a favoritos!`);
+  };
+
   const handleClick = () => {
     clearToCart();
     updateState();
   };
 
 
-
-
   return (
-    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick, cartCount }}>
+    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick, addToFavorites, cartCount }}>
       {children}
     </CartContext.Provider>
   );

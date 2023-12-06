@@ -26,7 +26,7 @@ export default function Home({Component , pageProps}) {
           }
       `}</style>
       
-      
+        
           
 
       

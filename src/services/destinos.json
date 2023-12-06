@@ -109,5 +109,8 @@
       "bgcolor": "var(--primary-color)"
     }
   ],
-  "cart": []
+  
+  "cart": [],
+
+  "favorites":[]
 }

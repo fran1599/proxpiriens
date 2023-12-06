@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"json-server --port 5000 --watch src/services/destinos.json\" \"next dev\"", 
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "apifake": "json-server --port 5000 --watch src/services/destinos.json"
+    "lint": "next lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
