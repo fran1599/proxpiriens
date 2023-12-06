@@ -1,5 +1,5 @@
 import React from 'react';
-
+// Información acerca de uno de los destinos, en este caso San Carlos de Bariloche 
 const BarilocheSection = () => {
   const styles = `
     font-family: "SF Pro Display, sans-serif";
