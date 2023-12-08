@@ -1,6 +1,7 @@
+
+
 import Card from "@/atoms/Card";
 import { useShopping } from "@/context/CartContext";
-import React from "react";
 import { useWindowSize } from "react-use";
 
 const CardContainer = () => {

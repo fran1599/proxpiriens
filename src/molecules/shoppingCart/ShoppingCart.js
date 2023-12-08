@@ -22,7 +22,7 @@ const ShoppingCart = () => {
         <button onClick={handleClick}>Terminar Reserva</button>
         <button onClick={handleClick}>Limpiar Carrito</button>
       </div>
-        
+
       <style jsx>{`
         .grid-responsive {
           display: flex;

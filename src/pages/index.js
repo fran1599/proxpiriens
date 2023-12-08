@@ -15,6 +15,7 @@ export default function Home({Component , pageProps}) {
         <link rel="icon" href="./LogoColorFloating.png" />
       </Head>
       <main>
+        
       <CardsSection/>
       
       <style jsx global>{`

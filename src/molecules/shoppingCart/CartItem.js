@@ -1,5 +1,3 @@
-import { title } from "process";
-
 
 
 const CartItem = ({item, deleteToCart}) => {
@@ -23,8 +21,8 @@ const CartItem = ({item, deleteToCart}) => {
       </figure>
                              
         
-        <style jsx>
-        {`
+        <style jsx> {`
+          
           figure {
             width: 95%;
             height: auto;
@@ -76,10 +74,7 @@ const CartItem = ({item, deleteToCart}) => {
               height: 400px;
             }
           }
-
-
-        `}
-      </style>
+          `} </style>
       </>
     );
   };

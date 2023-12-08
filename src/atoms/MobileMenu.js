@@ -6,11 +6,13 @@ import { useShopping } from '@/context/CartContext';
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
     const [chartSearch, setChartSearch] = useState(false);
 
-    const { cartCount } = useShopping();  
+    const { cartCount, favoritesCount } = useShopping();  
 
-    const handleSearch = () => {
+    const handleSearch = () => {  
          setChartSearch(!chartSearch);
     };
+
+    
    
     const handleCart = () => {
         // Agregar lógica para abrir el carrito
@@ -59,6 +61,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
               <Link href="/favorites">
                 <div className="favorites-icon-container">
                   <img src="/icon/heart.png" alt="Favorites" className="favorites-icon" />
+                  {favoritesCount > 0 && <span className="favorites-count">{favoritesCount}</span>}
                 </div>
               </Link>
             </li>
@@ -198,6 +201,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           cursor: pointer;
         }
         
+        
         @media (max-width: 768px) {
           .menu-items {
             display: none;
@@ -226,7 +230,15 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             border-radius: 50%;
             padding: 0.2rem 0.5rem;
           }
-        
+          .favorites-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ff0000;
+            color: #ffffff;
+            border-radius: 50%;
+            padding: 0.2rem 0.5rem;
+          }
           .favorites-icon-container {
             width: 20px; 
             height: auto;

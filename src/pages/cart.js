@@ -2,6 +2,7 @@
 
 import Head from "next/head";
 import { Inter } from "next/font/google";
+import ShoppingCart from "../molecules/shoppingCart/ShoppingCart";
 
 
 
@@ -18,13 +19,13 @@ export default function Home() {
       </Head>
       <main>
       
+      <ShoppingCart />
    
-   
-        <style jsx global>{`
-          body {
-            font-family: ${inter}, sans-serif;
-          }
-        `}</style>
+      <style jsx global>{`
+        body {
+          font-family: ${inter}, sans-serif;
+        }
+      `}</style>
       </main>
     </>
   );

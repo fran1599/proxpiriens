@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 
 import axios from "axios";
 
-// Definir el contexto
+// Defino el contexto
 const CartContext = createContext();
 
 // Estado inicial del carrito
@@ -22,6 +22,7 @@ export const ACTIONS = {
   REMOVE_ALL_FROM_CART: 'REMOVE_ALL_FROM_CART',
   CLEAR_CART: 'CLEAR_CART',
   ADD_TO_FAVORITES: 'ADD_TO_FAVORITES',
+  REMOVE_FROM_FAVORITES: 'REMOVE_FROM_FAVORITES',
 };
            
 // Reducer para gestionar el estado del carrito
@@ -87,15 +88,25 @@ export const shoppingReducer = (state, action) => {
     
       return initialState
 
-    case ACTIONS.ADD_TO_FAVORITES:{
+      case ACTIONS.ADD_TO_FAVORITES: {
+        const newFavorite = state.products.find((product) => product.id === action.payload);
       
-      const newFavorite = state.products.find((product) => product.id === action.payload);
+        // Verificamos si el producto ya está en favoritos
+        const isAlreadyFavorite = state.favorites.some((fav) => fav.id === newFavorite.id);
+      
+        return isAlreadyFavorite
+          ? state // Si ya está en favoritos, no hacemos cambios
+          : {
+              ...state,
+              favorites: [...state.favorites, newFavorite],
+            };
+      }
 
-      return { 
+    case ACTIONS.REMOVE_FROM_FAVORITES:
+      return {
         ...state,
-        favorites: [...state.favorites, newFavorite],
+        favorites: state.favorites.filter((fav) => fav.id !== action.payload),
       };
-     }
 
     default:
       return state;
@@ -110,6 +121,10 @@ export const ShoppingProvider = ({ children }) => {
   const { cart = [] } = state;
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0)
 
+  const { favorites = [] } = state;
+  const favoritesCount = favorites.reduce((total, item) => total + item.quantity, 0)
+  
+  
   console.log('Estado inicial del carrito:', state);
   
   const updateState = async () => {
@@ -118,25 +133,33 @@ export const ShoppingProvider = ({ children }) => {
       cart: "http://localhost:5000/cart",
       favorites: "http://localhost:5000/favorites"
     };
-
-    const resProducts = await axios.get(ENDPOINTS.products),
-      resCart = await axios.get(ENDPOINTS.cart),
-      resFavorites= await axios.get(ENDPOINTS.favorites);
-
-   
-    const productsList = await resProducts.data,
-      cartItems = await resCart.data,
-      favoritesItems = await resFavorites.data;
   
-
-    dispatch({
-      type: ACTIONS.READ_STATE,
-      payload: {
-        products: productsList,
-        cart: cartItems,
-        favorites: favoritesItems
-      },
-    });
+    try {
+      const [resProducts, resCart, resFavorites] = await Promise.all([
+        axios.get(ENDPOINTS.products),
+        axios.get(ENDPOINTS.cart),
+        axios.get(ENDPOINTS.favorites)
+      ]);
+  
+      const productsList = resProducts.data,
+        cartItems = resCart.data,
+        favoritesItems = resFavorites.data;
+  
+      dispatch({
+        type: ACTIONS.READ_STATE,
+        payload: {
+          products: productsList,
+          cart: cartItems,
+          favorites: favoritesItems
+        },
+      });
+  
+      // Guardar en localStorage
+      localStorage.setItem('cartState', JSON.stringify(cartItems));
+      localStorage.setItem('favoritesState', JSON.stringify(favoritesItems));
+    } catch (error) {
+      console.error('Error al obtener los datos:', error);
+    }
   };
 
   useEffect(() => {
@@ -153,7 +176,7 @@ export const ShoppingProvider = ({ children }) => {
   const deleteToCart = (id, all = false) => {
     if (all) {
       dispatch({ type: ACTIONS.REMOVE_ALL_FROM_CART, payload: id });
-      alert(`¡El destino ha sido eliminado del carrito!`);
+      alert(`¡Los destinos fueron eliminados del carrito!`);
     } else {
       dispatch({ type: ACTIONS.REMOVE_ONE_FROM_CART, payload: id });
       alert(`¡Destino eliminado del carrito!`);
@@ -166,11 +189,17 @@ export const ShoppingProvider = ({ children }) => {
     alert(`¡Eliminaste todos los destinos del carrito!`);
     
   };
-
-  const addToFavorites = (id) => {  
-    dispatch({ type: ACTIONS.ADD_TO_FAVORITES, payload: id });
-    
+  const addToFavorites = (id) => {
+    const productToAdd = state.products.find((product) => product.id === id);
+  
+    dispatch({ type: ACTIONS.ADD_TO_FAVORITES, payload: productToAdd.id });
+  
     alert(`¡Destino agregado a favoritos!`);
+  };
+  const removeFromFavorites = (id) => {
+    dispatch({ type: ACTIONS.REMOVE_FROM_FAVORITES, payload: id });
+
+    alert(`¡Destino eliminado de favoritos!`);
   };
 
   const handleClick = () => {
@@ -180,7 +209,7 @@ export const ShoppingProvider = ({ children }) => {
 
 
   return (
-    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick, addToFavorites, cartCount }}>
+    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick, addToFavorites, removeFromFavorites, cartCount, favoritesCount }}>
       {children}
     </CartContext.Provider>
   );

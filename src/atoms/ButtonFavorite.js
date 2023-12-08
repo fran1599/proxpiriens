@@ -22,7 +22,7 @@ function ButtonFavorite({ product }) {
     }
   };
 
-  const image = isFavorite ? "./icon/heart.png" : "./icon/heart-empty.png";
+  const image = isFavorite ? "/icon/heart.png" : "/icon/heart-empty.png";
 
   return (
     <>

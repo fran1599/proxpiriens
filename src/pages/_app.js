@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
    <ShoppingProvider>
     <NavBar />
     <Component {...pageProps} />
-    <ShoppingCart />
+   
     </ShoppingProvider>
 
 )}

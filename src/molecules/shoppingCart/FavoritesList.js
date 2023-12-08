@@ -1,23 +1,22 @@
 
-
-import { useShopping } from '@/context/CartContext';
+import { useShopping, ACTIONS } from "@/context/CartContext";
 import FavoriteItem from './FavoriteItem';
 
 const FavoritesList = () => {
-
-  const { state, deleteToCart, handleClick } = useShopping();
+  const { state, handleClick, removeFromFavorites } = useShopping();
   const { favorites } = state;
+
 
   return (
     <>
-    <div className="favorites">
+      <div className="favorites">
         <h3>FAVORITOS</h3>
         <div className="grid-responsive">
-         {favorites.map((item, i) => (
-            <FavoriteItem key={i} item={item} deleteToCart={deleteToCart} />
+          {favorites.map((item) => (
+            <FavoriteItem key={item.id} item={item} removeFromFavorites={removeFromFavorites} />
           ))}
         </div>
-        <button onClick={handleClick}>Limpiar Carrito</button>
+        <button onClick={handleClick}>Eliminar todos</button>
       </div>
 
       <style jsx>{`
@@ -25,7 +24,6 @@ const FavoritesList = () => {
           display: flex;
           flex-wrap: wrap;
         }
-
 
         .box-grid {
           display: grid;
@@ -37,4 +35,4 @@ const FavoritesList = () => {
   );
 };
 
-export default FavoritesList
+export default FavoritesList;   

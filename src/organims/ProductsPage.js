@@ -5,7 +5,7 @@ import Product from "@/molecules/Product";
 
 const ProductsPage = () => {
  
-  const { state, addToCart} = useShopping();
+  const { state, addToCart, addToFavorites} = useShopping();
   const { products } = state;
 
 
@@ -14,7 +14,7 @@ const ProductsPage = () => {
       <h3>Productos</h3>
       <div className="grid-responsive">
         {products.map((product) => (
-          <Product key={product.id} product={product} addToCart={addToCart} />
+          <Product key={product.id} product={product} addToCart={addToCart} addToFavorites={addToFavorites} />
         ))}
       </div>
 

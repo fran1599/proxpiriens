@@ -3,7 +3,7 @@ import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
 import { useState } from "react";
 
-const Card = ({ product, addToCart }) => {
+  const Card = ({ product, addToCart, addToFavorites}) => {
   const { img, title, text, paquete, price } = product;
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,7 +37,7 @@ const Card = ({ product, addToCart }) => {
           <h6>Incluye impuestos, tasas y cargos</h6>
           <div className="keypad">
             <ButtonReserve key={product.id} product={product} addToCart={addToCart} />
-            <ButtonFavorite product={product} />
+            <ButtonFavorite product={product} addToFavorites={addToFavorites} />
           </div>
         </div>
       </figure>
