@@ -122,8 +122,7 @@ export const ShoppingProvider = ({ children }) => {
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0)
 
   const { favorites = [] } = state;
-  const favoritesCount = favorites.reduce((total, item) => total + item.quantity, 0)
-  
+  const favoritesCount = favorites.length;
   
   console.log('Estado inicial del carrito:', state);
   

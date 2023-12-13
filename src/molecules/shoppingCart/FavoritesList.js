@@ -1,5 +1,6 @@
 
-import { useShopping, ACTIONS } from "@/context/CartContext";
+import { useShopping
+ } from "@/context/CartContext";
 import FavoriteItem from './FavoriteItem';
 
 const FavoritesList = () => {
@@ -12,8 +13,8 @@ const FavoritesList = () => {
       <div className="favorites">
         <h3>FAVORITOS</h3>
         <div className="grid-responsive">
-          {favorites.map((item) => (
-            <FavoriteItem key={item.id} item={item} removeFromFavorites={removeFromFavorites} />
+          {favorites.map((fav) => (
+            <FavoriteItem key={fav.id} fav={fav} removeFromFavorites={removeFromFavorites} />
           ))}
         </div>
         <button onClick={handleClick}>Eliminar todos</button>

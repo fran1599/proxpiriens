@@ -1,7 +1,7 @@
 
 
-const FavoriteItem = ({ item, removeFromFavorites }) => {
-  const { id, title, img } = item;
+const FavoriteItem = ({ fav, removeFromFavorites }) => {
+  const { id, title, img } = fav;
 
   return (
     <>
