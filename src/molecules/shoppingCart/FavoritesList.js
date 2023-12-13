@@ -24,6 +24,7 @@ const FavoritesList = () => {
         .grid-responsive {
           display: flex;
           flex-wrap: wrap;
+          margin-top: 40px;
         }
 
         .box-grid {

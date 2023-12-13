@@ -1,7 +1,7 @@
 
 import {ShoppingProvider} from '@/context/CartContext'
-import ShoppingCart from '@/molecules/shoppingCart/ShoppingCart'
 import NavBar from '@/organims/NavBar'
+import Footer from '@/organims/footer'
 import '@/styles/globals.css'
 
 
@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
    <ShoppingProvider>
     <NavBar />
     <Component {...pageProps} />
-   
+    <Footer/>
     </ShoppingProvider>
 
 )}

@@ -22,9 +22,7 @@ export default function Home() {
             font-family: ${inter}, sans-serif;
           }
 
-          .cart {
-            display: none;
-          }
+        
         `}</style>
       </main>
     </>

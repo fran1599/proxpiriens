@@ -70,12 +70,14 @@ const Carousel1 = () => {
       <style jsx>{`
         .carousel-container {
           width: 100%;
+          height: auto;
           margin: 0 auto;
           padding: 20px;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          margin-top: 40px;
         }
 
         .text-container {
@@ -126,6 +128,7 @@ const Carousel1 = () => {
         @media screen and (max-width: 768px) {
           .carousel-slide img {
             width: 100%;
+            height: auto;
           }
           h1 {
             font-size: 1.5rem;
@@ -138,6 +141,7 @@ const Carousel1 = () => {
         @media screen and (max-width: 480px) {
           .carousel-container {
             width: 100%;
+            height: auto;
           }
           .carousel-button {
             display: none;
