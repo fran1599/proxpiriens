@@ -1,18 +1,14 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+
 import CardsSection from "@/organims/CardsSection";
 import Carousel1 from '@/organims/Carousel1';
-<<<<<<< HEAD
-import ReviewCardContainer from '@/organims/ReviewCardContainer';
-
-=======
 import NavBar from "@/organims/NavBar";
 import Footer from '@/organims/footer';
 import ReviewCard from '@/organims/ReviewCard';
 import ElegirnosSection from '@/organims/ElegirnosSection';
 import BarilocheSection from '@/organims/BarilocheSection';
->>>>>>> reviews
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,18 +23,14 @@ export default function Home() {
         <link rel="icon" href="./LogoColorFloating.png" />
       </Head>
       <main>
-   
+
+       
     <Carousel1/>
     <CardsSection/>
-<<<<<<< HEAD
-    <ReviewCardContainer/>
-    
-=======
     <ReviewCard/>
     <ElegirnosSection/>
     <BarilocheSection/>
-    <Footer/>
->>>>>>> reviews
+    
 
         <style jsx global>{`
           body {
