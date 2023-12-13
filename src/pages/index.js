@@ -1,11 +1,15 @@
-
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import CardsSection from "@/organims/CardsSection";
+import Carousel1 from '@/organims/Carousel1';
+import NavBar from "@/organims/NavBar";
+import Footer from '@/organims/footer';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({Component , pageProps}) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -15,26 +19,19 @@ export default function Home({Component , pageProps}) {
         <link rel="icon" href="./LogoColorFloating.png" />
       </Head>
       <main>
-        
-      <CardsSection/>
-      
-      <style jsx global>{`
+   
+    <Carousel1/>
+    <CardsSection/>
+    <Footer/>
+
+        <style jsx global>{`
           body {
             font-family: ${inter}, sans-serif;
           }
-          .cart {
-            display: none;
-          }
-      `}</style>
-      
-        
-          
-
-      
-          
+        `}</style>
+    
       </main>
       </>
 
   )
 }
-                              
