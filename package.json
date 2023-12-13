@@ -3,26 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "apifake": "json-server --port 5000 --watch src/services/destinos.json",
     "dev": "next dev",
+    "start": "npm-run-all --parallel apifake dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "apifake": "json-server --port 5000 --watch src/services/destinos.json"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "axios": "^1.6.1",
+    "axios": "^1.6.2",
     "json": "^11.0.0",
     "json-server": "^0.17.4",
     "node": "^21.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-use": "^17.4.2"
   },
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "13.5.6",
-    "next": "^14.0.2"
+    "next": "^14.0.2",
+    "npm-run-all": "^4.1.5"
   }
 }

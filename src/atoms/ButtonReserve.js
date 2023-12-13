@@ -1,10 +1,13 @@
-const ButtonReserve = ({bgcolor}) => {
 
+   
 
-
-    return (
+const ButtonReserve = ({ product, addToCart}) => {
+  
+  const { id, bgcolor } = product;
+     
+  return (
       <>
-        <button>Reservar ahora</button>
+        <button onClick={() => addToCart(id)}>Reservar ahora</button>
         <style jsx>
           {`
             button {

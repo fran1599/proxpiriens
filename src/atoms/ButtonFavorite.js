@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useShopping, ACTIONS } from "@/context/CartContext";
 
-function ButtonFavorite() {
-  const [isFavorite, setIsFavorite] = useState(false);
+function ButtonFavorite({ product }) {
+  const { state, dispatch } = useShopping();
+  const { favorites } = state;
+
+  const [isFavorite, setIsFavorite] = useState(
+    product && favorites.some((fav) => fav.id === product.id)
+  );
 
   const handleClick = () => {
-    setIsFavorite(!isFavorite);
+    if (product) {
+      setIsFavorite(!isFavorite);
+      if (isFavorite) {
+        // Eliminar de favoritos si ya está en la lista
+        dispatch({ type: ACTIONS.REMOVE_FROM_FAVORITES, payload: product.id });
+      } else {
+        // Agregar a favoritos si no está en la lista
+        dispatch({ type: ACTIONS.ADD_TO_FAVORITES, payload: product.id });
+      }
+    }
   };
 
-  const image = isFavorite ? "./icon/heart.png" : "./icon/heart-empty.png";
+  const image = isFavorite ? "/icon/heart.png" : "/icon/heart-empty.png";
 
   return (
     <>
@@ -21,7 +36,6 @@ function ButtonFavorite() {
             background-color: transparent;
             border: none;
             cursor: pointer;
-            
           }
           img {
             width: 55px;

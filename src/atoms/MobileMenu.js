@@ -1,15 +1,18 @@
 
-import React, {useState, useEffect} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import {useState, useEffect} from 'react';
+import Link from "next/link";
+import { useShopping } from '@/context/CartContext';
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
-    const [chartSearch, setChartSearch] = useState(false)
+    const [chartSearch, setChartSearch] = useState(false);
 
-    const handleSearch = () => {
+    const { cartCount, favoritesCount } = useShopping();  
+
+    const handleSearch = () => {  
          setChartSearch(!chartSearch);
     };
+
+    
    
     const handleCart = () => {
         // Agregar lógica para abrir el carrito
@@ -43,31 +46,46 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
         </button>
         <ul className="menu-items">
             <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Destinos</a></li>
+            <li><Link href="/destinos">Destinos</Link></li>
             <li><a href="#">Paquetes</a></li>
             <li><a href="#">Contacto</a></li>
             <li className="menu-button">
+              <Link href= "/cart">
               <button className="cart-button" onClick={handleCart}>
-              <FontAwesomeIcon icon={faShoppingCart} />
+              <img src="/icon/cart.png" alt="cart" className='cart-image' />
+              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
               </button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/favorites">
+                <div className="favorites-icon-container">
+                  <img src="/icon/heart.png" alt="Favorites" className="favorites-icon" />
+                  {favoritesCount > 0 && <span className="favorites-count">{favoritesCount}</span>}
+                </div>
+              </Link>
             </li>
             <li className="menu-button">
               <button className="search-button" onClick={handleSearch}>
-              <FontAwesomeIcon icon={faSearch} />
+              <img src="/icon/lupa.png" alt="find" className='find-image' />
               </button>
             </li>
         </ul>
-
           {chartSearch && (
             <div className="search-box">
-              {/* Cuadro de búsqueda */}
+              {/* Cuadro de búsqueda */}  
               <form>
               <input type="text" placeholder="Buscar..." />
-              <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
+              <button type="submit"><img src="/icon/lupa.png" alt="find" className='find-image' /></button>
               </form>
             </div>
+           
           )}
+
+          
+
       </div>
+  
         
       <style jsx>{`
       
@@ -75,7 +93,8 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           display: flex;
           align-items: center;
         }
-  
+
+        
         .menu-toggle {
           background: none;
           border: none;
@@ -104,14 +123,19 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             border: none;
             cursor: pointer;
             color: #fff;
-            font-size: 16px;
-            margin: 0;
+            margin: 0;       
             padding: 0;
+  
           }
-    
-          .cart-button {
-            margin-right: 20px;
+          .cart-image {
+            height: 20px;
+
           }
+          .find-image {
+            height: 20px;
+
+          }
+
         .menu-toggle.open .bar:nth-child(1) {
           transform: rotate(-45deg) translate(-5px, 6px);
         }
@@ -165,12 +189,24 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           color: #fff;
           font-size: 16px;
         }
+
+        .favorites-icon-container {
+          width: auto; 
+          height: auto;
+        }
+      
+        .favorites-icon {
+          width: 22px; 
+          height: auto;
+          cursor: pointer;
+        }
+        
         
         @media (max-width: 768px) {
           .menu-items {
             display: none;
           }
-  
+        
           .mobile-menu.open .menu-items {
             display: flex;
             flex-direction: column;
@@ -180,11 +216,40 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             background-color: #333;
             padding: 10px;
           }
-  
+        
           .mobile-menu .menu-toggle {
             display: flex; /* Mostrar solo en dispositivos móviles */
           }
-
+        
+          .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ff0000;
+            color: #ffffff;
+            border-radius: 50%;
+            padding: 0.2rem 0.5rem;
+          }
+          .favorites-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ff0000;
+            color: #ffffff;
+            border-radius: 50%;
+            padding: 0.2rem 0.5rem;
+          }
+          .favorites-icon-container {
+            width: 20px; 
+            height: auto;
+            margin-right: 20px; 
+          }
+        
+          .favorites-icon {
+            width: 100%; 
+            height: auto;
+            cursor: pointer;
+          }
         }
       `}</style>
     </>
