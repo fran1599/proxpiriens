@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import CardsSection from "@/organims/CardsSection";
 import Carousel1 from '@/organims/Carousel1';
+import ReviewCardContainer from '@/organims/ReviewCardContainer';
 
 
 
@@ -21,6 +22,7 @@ export default function Home() {
    
     <Carousel1/>
     <CardsSection/>
+    <ReviewCardContainer/>
     
 
         <style jsx global>{`
