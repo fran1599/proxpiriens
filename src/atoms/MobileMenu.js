@@ -101,9 +101,12 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
       </div>
 
       <style jsx>{`
+
+
         .mobile-menu {
           display: flex;
           align-items: center;
+          font-family: 'roboto', sans-serif; 
         }
 
         .menu-toggle {

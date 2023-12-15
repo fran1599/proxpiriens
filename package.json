@@ -5,7 +5,7 @@
   "scripts": {
     "apifake": "json-server --port 5000 --watch src/services/destinos.json",
     "dev": "next dev",
-    "start": "npm-run-all --parallel apifake dev",
+    "start": "concurrently \"npm run apifake\" \"next dev -p 3000\"",
     "build": "next build",
     "lint": "next lint"
   },
