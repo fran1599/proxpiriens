@@ -4,7 +4,6 @@ import NavBar from '@/organims/NavBar'
 import Footer from '@/organims/footer'
 import '@/styles/globals.css'
 
-
 export default function App({ Component, pageProps }) {
   return (
 
@@ -15,3 +14,4 @@ export default function App({ Component, pageProps }) {
     </ShoppingProvider>
 
 )}
+  

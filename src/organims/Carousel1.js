@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+
+
+import { useState, useEffect } from 'react';
 
 // Lista de rutas de imágenes para el carousel es local y está en el directorio del proyecto. 
 const images = [  
@@ -60,39 +62,62 @@ const Carousel1 = () => {
           <h1 style={{ color: currentColor.h1 }}>La Aventura te espera...</h1>
           <h2 style={{ color: currentColor.h2 }}>viaja con nosotros</h2>
         </div>
-        <button className="carousel-button button-left" onClick={prevSlide}>&lt;</button>
-        <div className="carousel-slide">
-          <img className="carousel-img" src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+        <div className="carousel-wrapper">
+          <button className="carousel-button button-left" onClick={prevSlide}>
+            &lt;
+          </button>
+          <div className="carousel-slide">
+            <img
+              className="carousel-img"
+              src={images[currentIndex]}
+              alt={`Slide ${currentIndex + 1}`}
+            />
+          </div>
+          <button className="carousel-button button-right" onClick={nextSlide}>
+            &gt;
+          </button>
         </div>
-        <button className="carousel-button button-right" onClick={nextSlide}>&gt;</button>
       </div>
 
       <style jsx>{`
         .carousel-container {
+          min-height: 100vh;
           width: 100%;
-          height: auto;
-          margin: 0 auto;
-          padding: 20px;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          margin-top: 40px;
+          overflow: hidden;
+          position: relative;
         }
 
         .text-container {
           text-align: center;
           width: 100%;
-          margin-top: 0.1rem;
-          margin-bottom: 0.1rem; 
+          margin-top: 55px;
+          z-index: 2;
+        }
+
+        .carousel-wrapper {
+          width: 100%;
+          height: 500px;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+        }
+
+        .carousel-slide {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
         }
 
         .carousel-img {
           object-fit: cover;
-          
           transition: 0.2s;
-          width: 96vw;
-          height: 80vh;
+          width: 100%;
+          height: 100%;
         }
 
         .carousel-img:hover {
@@ -126,31 +151,14 @@ const Carousel1 = () => {
         }
 
         @media screen and (max-width: 768px) {
-          .carousel-slide img {
-            width: 100%;
-            height: auto;
-          }
-          h1 {
-            font-size: 1.5rem;
-          }
-          h2 {
-            font-size: 1.5rem;
+          .carousel-container {
+            height: 60vh; 
           }
         }
 
         @media screen and (max-width: 480px) {
           .carousel-container {
-            width: 100%;
-            height: auto;
-          }
-          .carousel-button {
-            display: none;
-          }
-          h1 {
-            font-size: 1rem;
-          }
-          h2 {
-            font-size: 1rem;
+            height: 50vh; 
           }
         }
       `}</style>

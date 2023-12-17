@@ -1,25 +1,23 @@
 
-import React from 'react';
+
 
 const Footer = () => {
     return (
       <>
       <footer className="footer">
 
-
-        
-<div className="banner">
-<a href="https://www.facebook.com/"><img src="./img/footer/facebook.svg" alt="Facebook" className="icons-banner" /></a>
-<a href="https://www.instagram.com/"><img src="./img/footer/instagram.svg" alt="Instagram" className="icons-banner" /></a>
-<a href="https://www.twitter.com/"><img src="./img/footer/twitter.svg" alt="Twitter" className="icons-banner-fullscreen" /></a>
-<a href="https://web.whatsapp.com/"><img src="./img/footer/whatsapp.svg" alt="Whatsapp" className="icons-banner" /></a>
-<a href="https://tiktok.com/"><img src="./img/footer/tiktok.svg" alt="TikTok" className="icons-banner-fullscreen" /></a>
-<a href="https://web.telegram.org/a/"><img src="./img/footer/telegram.svg" alt="Telegram" className="icons-banner-fullscreen" /></a>
-</div>
+        <div className="banner">
+        <a href="https://www.facebook.com/"><img src="./img/footer/facebook.svg" alt="Facebook" className="icons-banner" /></a>
+        <a href="https://www.instagram.com/"><img src="./img/footer/instagram.svg" alt="Instagram" className="icons-banner" /></a>
+        <a href="https://www.twitter.com/"><img src="./img/footer/twitter.svg" alt="Twitter" className="icons-banner-fullscreen" /></a>
+        <a href="https://web.whatsapp.com/"><img src="./img/footer/whatsapp.svg" alt="Whatsapp" className="icons-banner" /></a>
+        <a href="https://tiktok.com/"><img src="./img/footer/tiktok.svg" alt="TikTok" className="icons-banner-fullscreen" /></a>
+        <a href="https://web.telegram.org/a/"><img src="./img/footer/telegram.svg" alt="Telegram" className="icons-banner-fullscreen" /></a>
+        </div>
 
 
 
-<div className="footer-links">
+        <div className="footer-links">
   
     <img src="./LogoColorFloating.png" alt="Proxpiriens" />
  
@@ -36,7 +34,6 @@ const Footer = () => {
       <p><a href="">Glaciar Perito Moreno</a></p>
       <p><a href="">Puerto Madryn</a></p>
       <p><a href="">Ushuaia</a></p>
-      <p><a href="">Valle de La Luna</a></p>
     </div>
 
     <div className="categorias">
@@ -97,9 +94,6 @@ const Footer = () => {
       .icons-banner, .icons-banner-fullscreen {
         filter: invert(32%) sepia(31%) saturate(1523%) hue-rotate(290deg) brightness(99%) contrast(86%);
       }
-
-
-
 
       .footer-links > img {
         width: 60vw;

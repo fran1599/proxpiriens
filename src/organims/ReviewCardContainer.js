@@ -1,4 +1,4 @@
-import React from "react";
+
 import ReviewCard from "./ReviewCard";
 
 const reviews = [
@@ -51,20 +51,20 @@ const ReviewCardContainer = () => {
         </div>
       </div>
       <style jsx>{`
-      .app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-}
+        .app {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: auto;
+        }
 
-.review-container {
-  display: flex;
-  flex-wrap: wrap;
-}
+        .review-container {
+          display: flex;
+          flex-wrap: wrap;
+        }
 
-`}</style>
+      `}</style>
     </>
   );
 };

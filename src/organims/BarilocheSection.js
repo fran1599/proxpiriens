@@ -1,6 +1,7 @@
 
 
 // Información acerca de uno de los destinos, en este caso San Carlos de Bariloche 
+
 const BarilocheSection = () => {
  
   return (
@@ -15,6 +16,8 @@ const BarilocheSection = () => {
           </div>
 
           <div className="right-column">
+            <h2 className="destacado">DESTINO DESTACADO DEL MES</h2>
+            <br/>
             <h2>San Carlos de <span style={{ color: '#0f224c' }}>Bariloche</span></h2>
             <br/>
             <h3>Río Negro - Patagonia Argentina</h3>
@@ -33,13 +36,20 @@ const BarilocheSection = () => {
       </div>
 
       <style jsx>{`
+
         .bariloche-section {
           display: flex;
           flex-direction: column;
           align-items: center;
           padding: 20px;
+          min-height: 100vh;
+          height: 100%;
         }
 
+        .destacado {
+          font-style: italic;
+          text-decoration: underline;
+        }
         .container {
           display: flex;
           flex-wrap: wrap;
@@ -56,14 +66,27 @@ const BarilocheSection = () => {
         }
 
         .left-column img {
-          width: 100%; /* Ajusta el ancho al 100% del contenedor */
-          max-height: 400px; /* Establece una altura máxima para evitar que la imagen sea demasiado alta */
-          margin-bottom: 20px; /* Agrega un margen inferior para separar la imagen del párrafo */
+          width: 100%; 
+          max-height: 400px; 
+          margin-bottom: 20px; 
+          margin-top: 80px;
         }
 
         .right-column p {
           line-height: 1.6;
         }
+
+        @media only screen and (max-width: 768px) {
+          .left-column img {
+            margin-top: 40px;
+          }
+        }
+
+        @media only screen and (max-width: 480px) {
+          .left-column img {
+            margin-top: 20px;
+          }
+          
       `}</style>
     </>
   );

@@ -1,11 +1,11 @@
 
 import CardsContainer from "./CardsContainer";
-
+   
 const CardsSection = () => {
   return (
     <>
       <section>
-        <h2> Más populares:</h2>
+        <h2> MAS POPULARES:</h2>
         <CardsContainer />
       </section>
 
@@ -23,7 +23,7 @@ const CardsSection = () => {
             margin-bottom: -10px;
             font-family: "Alfa Slab One", serif;
             letter-spacing: 0.1em;
-            color: var(--tertiary-color)
+            color: black;
           }
 
 

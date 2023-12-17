@@ -49,7 +49,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           </li>
 
           <li>
-            <a href="#">Nosotros</a>
+            <a href="#ElegirnosSection">Nosotros</a>
           </li>
           <li>
             <Link href="/destinos">Destinos</Link>
