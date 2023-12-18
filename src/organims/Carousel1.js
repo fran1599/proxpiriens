@@ -100,7 +100,7 @@ const Carousel1 = () => {
 
         .carousel-wrapper {
           width: 100%;
-          height: 500px;
+          height: 500px;  
           position: relative;
           overflow: hidden;
           z-index: 1;

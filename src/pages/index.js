@@ -10,9 +10,6 @@ import ElegirnosSection from '@/organims/ElegirnosSection';
 import BarilocheSection from '@/organims/BarilocheSection';
 
 
-
-
-
 export default function Home() {
   return (
     <>

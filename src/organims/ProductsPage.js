@@ -1,13 +1,9 @@
-
 import { useShopping } from "@/context/CartContext";
 import Product from "@/molecules/Product";
 
-
 const ProductsPage = () => {
- 
-  const { state, addToCart, addToFavorites} = useShopping();
+  const { state, addToCart, addToFavorites } = useShopping();
   const { products } = state;
-
 
   return (
     <>
@@ -18,18 +14,14 @@ const ProductsPage = () => {
         ))}
       </div>
 
-      <style jsx global> {`
-         
-
-          .grid-responsive {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 40px;
-          }
-
-
-        
-        `} </style>
+      <style jsx global>{`
+        .grid-responsive {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          margin-top: 40px;
+        }
+      `}</style>
     </>
   );
 };

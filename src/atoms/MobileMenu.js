@@ -12,7 +12,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
   };
 
   const handleCart = () => {
-    // Agregar lógica para abrir el carrito
+    // Agrego lógica para abrir el carrito
     console.log("Abrir carrito");
   };
 
@@ -55,7 +55,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             <Link href="/destinos">Destinos</Link>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <Link href="/contacto">Contacto</Link>
           </li>
           <li className="menu-button">
             <Link href="/cart">

@@ -1,38 +1,35 @@
-
-
 import ButtonFavorite from "@/atoms/ButtonFavorite";
 import ButtonReserve from "@/atoms/ButtonReserve";
-                        
 
 const Product = ({ product, addToCart, addToFavorites }) => {
   const { id, img, title, text, paquete, price, bgcolor } = product;
 
   return (
     <>
-       <section className="destination" style={{ backgroundImage: `url(${img})` }} key={id}>
-      <div className="destination-overlay"></div>
-      <div className="destination-content">
-        <h1 className="destination-title">{title}</h1>
-        <p className="destination-text">{text}</p>
-        <p className="destination-paquete">{paquete}</p>
-        <h6>Precio final por persona</h6>
-        <h2>${price}</h2>
-        <h6>Incluye impuestos, tasas y cargos</h6>
-        <div className="keypad">
-          <ButtonReserve key={product.id} product={product} addToCart={addToCart}/>
-          <ButtonFavorite product={product} addToFavorites={addToFavorites}/>
+      <section className="destination" style={{ backgroundImage: `url(${img})` }} key={id}>
+        <div className="destination-overlay"></div>
+        <div className="destination-content">
+          <h1 className="destination-title">{title}</h1>
+          <p className="destination-text">{text}</p>
+          <p className="destination-paquete">{paquete}</p>
+          <h6>Precio final por persona</h6>
+          <h2>${price}</h2>
+          <h6>Incluye impuestos, tasas y cargos</h6>
+          <div className="keypad">
+            <ButtonReserve key={product.id} product={product} addToCart={addToCart} />
+            <ButtonFavorite product={product} addToFavorites={addToFavorites} />
+          </div>
         </div>
-      </div>
-    </section>
-       <style jsx>
+      </section>
+      <style jsx>
         {`
           .destination {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0px;
-            padding: 30px;
+            margin: 10px; 
+            padding: 20px; 
             height: auto;
             width: 100%;
             text-align: center;
@@ -40,6 +37,8 @@ const Product = ({ product, addToCart, addToFavorites }) => {
             background-position: center;
             position: relative;
             z-index: 1;
+            border-radius: 15px;
+            overflow: hidden;
           }
 
           .destination-overlay {
@@ -61,6 +60,7 @@ const Product = ({ product, addToCart, addToFavorites }) => {
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             visibility: hidden;
           }
+
 
           .destination-title {
             text-transform: uppercase;
@@ -132,15 +132,16 @@ const Product = ({ product, addToCart, addToFavorites }) => {
               visibility: visible;
             }
           }
+
           @media (min-width: 768px) {
             .destination {
-              width: 50%;
+              width: 48%;
             }
           }
 
           @media (min-width: 1024px) {
             .destination {
-              width: 33.33%;
+              width: 31%; 
             }
           }
         `}
