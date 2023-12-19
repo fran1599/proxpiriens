@@ -1,76 +1,61 @@
 
-
 const FavoriteItem = ({ fav, removeFromFavorites }) => {
   const { id, title, img } = fav;
 
   return (
     <>
-    <div className="favorite-item">
-      <img src={img} alt={`Imagen de ${title}`} />
-      <h3>{title}</h3>
-      <button onClick={() => removeFromFavorites(id)}>ELIMINAR</button>
-    </div>
+      <div className="favorite-item">
+        <img src={img} alt={`Imagen de ${title}`} />
+        <h3>{title}</h3>
+        <button onClick={() => removeFromFavorites(id)}>ELIMINAR</button>
+      </div>
 
-     
-    <style jsx>
-        {`
-          figure {
-            width: 95%;
-            height: auto;
-            background-color: var(--black-color);
-            border: 1px solid black;
-            border-radius: 10px;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow: hidden;
-            transition: 0.4s ease-in-out;
-            margin-bottom: 20px;
-            
-          }
+      <style jsx>{`
+        .favorite-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: white;
+          border: 2px solid #d8d8d8; 
+          border-radius: 8px;
+          margin-left: 10px;
+          box-shadow: 0 4px 8px #000; 
+          margin-bottom: 20px;
+          overflow: hidden;
+          transition: 0.4s ease-in-out;
+        }
 
-          img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-          }
+        img {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
 
-          div {
-            padding: 15px;
-          }
+        h3 {
+          color: var(--primary-color);
+          font-size: 1.5rem;
+          margin: 10px 0;
+        }
 
-          h4 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            text-align: center;
-            line-height: 1;
-            font-family: "Alfa Slab One", serif;
-            letter-spacing: 0.1em;
-            margin: 20px 0;
-            
-          }
+        button {
+          padding: 10px 15px;
+          background-color: var(--primary-color);
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease-in-out;
+        }
 
-
-          div.keypad {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            border
-          }
-
-          @media only screen and (min-width: 450px) {
-            figure {
-              width: 300px;
-              height: 400px;
-            }
-          }
-
-
-        `}
-      </style>
-    </> 
+        button:hover {
+          background-color: #0066cc;
+          color: #fff;
+        }
+      `}</style>
+    </>
   );
 };
 
-export default FavoriteItem;   
+export default FavoriteItem;

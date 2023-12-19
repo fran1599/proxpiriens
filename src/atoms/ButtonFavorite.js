@@ -9,7 +9,7 @@ function ButtonFavorite({ product }) {
     product && favorites.some((fav) => fav.id === product.id)
   );
 
-  const handleClick = () => {
+  const handleClick = () => {  
     if (product) {
       setIsFavorite(!isFavorite);
       if (isFavorite) {

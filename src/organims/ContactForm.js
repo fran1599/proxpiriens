@@ -90,7 +90,7 @@ const ContactForm = () => {
           background-color: #4caf50;
           color: white;
           padding: 10px 15px;
-          border: none;
+          border: 1px solid black;
           cursor: pointer;
           border-radius: 5px; 
           transition: background-color 0.3s ease;

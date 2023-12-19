@@ -188,13 +188,14 @@ export const ShoppingProvider = ({ children }) => {
     alert(`¡Eliminaste todos los destinos del carrito!`);
     
   };
+
   const addToFavorites = (id) => {
     const productToAdd = state.products.find((product) => product.id === id);
   
     dispatch({ type: ACTIONS.ADD_TO_FAVORITES, payload: productToAdd.id });
-  
     alert(`¡Destino agregado a favoritos!`);
   };
+  
   const removeFromFavorites = (id) => {
     dispatch({ type: ACTIONS.REMOVE_FROM_FAVORITES, payload: id });
 
@@ -208,7 +209,7 @@ export const ShoppingProvider = ({ children }) => {
 
 
   return (
-    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick, addToFavorites, removeFromFavorites, cartCount, favoritesCount }}>
+    <CartContext.Provider value={{ state, dispatch, addToCart, deleteToCart, handleClick, addToFavorites, removeFromFavorites,  cartCount, favoritesCount }}>
       {children}
     </CartContext.Provider>
   );

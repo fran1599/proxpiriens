@@ -1,86 +1,91 @@
 
 
-const CartItem = ({item, deleteToCart}) => {
+const CartItem = ({ item, deleteToCart }) => {
+  const { title, price, id, quantity, img } = item;
 
-    const {title, price, id, quantity, img} = item;
-    
-                       
-    return (
-      <>
-        <figure>
-        <div className="img-container"><img src= {img} alt="imagen de destino" />
+  return (
+    <>
+    <div className="container">
+      <div className="cart-item">
+        <img src={img} alt={`Imagen de ${title}`} />
+        <div className="details">
+          <h4>{title}</h4>
+          <p>Precio: ${price} x {quantity} = ${price * quantity}</p>
+          <p>Pasajeros: {quantity}</p>
         </div>
-        <figcaption>
-            <h4>{title}</h4>
-            <div className="Price">${price} x {quantity} = ${price * quantity}</div>
-            <div className="keypad">
-            <button className = "Buybutton" onClick ={() => deleteToCart(id)}>ELIMINAR</button>
-            <button className = "Buybutton" onClick ={() => deleteToCart(id, true)}>LIMPIAR</button>
-            </div>
-        </figcaption>
-      </figure>
-                             
-        
-        <style jsx> {`
-          
-          figure {
-            width: 95%;
-            height: auto;
-            background-color: var(--black-color);
-            border: 1px solid black;
-            border-radius: 10px;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow: hidden;
-            transition: 0.4s ease-in-out;
-            margin-bottom: 20px;
-            
-          }
+        <div className="keypad">
+          <button onClick={() => deleteToCart(id)}>ELIMINAR</button>
+          <button onClick={() => deleteToCart(id, true)}>LIMPIAR</button>
+        </div>
+      </div>
+      </div>
 
-          img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-          }
+      <style jsx>{`
 
-          div {
-            padding: 15px;
-          }
+        .cart-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: white;
+          border: 2px solid #d8d8d8; 
+          border-radius: 8px;
+          box-shadow:  0 4px 8px #000; 
+          margin-bottom: 20px;
+          margin-left: 10px;
+          overflow: hidden;
+          transition: 0.4s ease-in-out;
+        }
 
-          h4 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            text-align: center;
-            line-height: 1;
-            font-family: "Alfa Slab One", serif;
-            letter-spacing: 0.1em;
-            margin: 20px 0;
-            
-          }
+        img {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
 
+        .details {
+          padding: 15px;
+          width: 100%;
+          text-align: center;
+        }
 
-          div.keypad {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            border
-          }
+        h4 {
+          color: var(--primary-color);
+          font-size: 1.5rem;
+          margin-bottom: 5px;
+        }
 
-          @media only screen and (min-width: 450px) {
-            figure {
-              width: 300px;
-              height: 400px;
-            }
-          }
-          `} </style>
-      </>
-    );
-  };
-      
-   
-  
-  
-  export default CartItem
-      
+        p {
+          font-size: 1rem;
+          color: var(--gray-color);
+          margin-bottom: 5px;
+        }
+
+        .keypad {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          padding: 10px;
+        }
+
+        button {
+          padding: 10px 15px;
+          background-color: var(--primary-color);
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+          background-color: #0066cc;
+          color: #fff;
+        }
+      `}</style>
+    </>
+  );
+};
+
+export default CartItem;
