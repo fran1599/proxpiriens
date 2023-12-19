@@ -185,7 +185,7 @@ export const ShoppingProvider = ({ children }) => {
 
   const clearToCart = () => {
     dispatch({ type: ACTIONS.CLEAR_CART });
-    alert(`¡Eliminaste todos los destinos del carrito!`);
+    
     
   };
 

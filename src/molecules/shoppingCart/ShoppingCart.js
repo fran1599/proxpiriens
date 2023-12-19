@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 import { useState } from "react";
 
 const ShoppingCart = () => {
-  const { state, deleteToCart, clearToCart, handleClick } = useShopping();
+  const { state, deleteToCart, handleClick } = useShopping();
   const { cart } = state;
 
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
@@ -26,6 +26,15 @@ const ShoppingCart = () => {
     setShowCheckoutModal(true);
   };
 
+  const alertaVaciado = () => {
+     alert(`¡Eliminaste todos los destinos del carrito!`);
+  }
+
+    const vaciarCarrito = () => {
+    handleClick();
+    alertaVaciado();
+  };
+
   return (
     <div className="cart">
       <h3>CARRITO</h3>
@@ -38,7 +47,7 @@ const ShoppingCart = () => {
         <button onClick={openCheckoutModal} className="checkout-button">
           Terminar Reserva
         </button>
-        <button onClick={handleClick} className="clear-button">
+        <button onClick={vaciarCarrito} className="clear-button">
           Limpiar Carrito
         </button>
       </div>
@@ -76,7 +85,7 @@ const ShoppingCart = () => {
             </label>
 
             <div className="button-group">
-              <button type="submit" className="submit-button">
+              <button type="submit" onClick={handleClick} className="submit-button">
                 Finalizar
               </button>
               <button type="button" onClick={() => setShowCheckoutModal(false)} className="cancel-button">
