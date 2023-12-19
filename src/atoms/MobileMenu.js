@@ -49,14 +49,17 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           </li>
 
           <li>
-            <a href="#ElegirnosSection">Nosotros</a>
+            <a href="/#ElegirnosSection">Nosotros</a>
           </li>
+
           <li>
             <Link href="/destinos">Destinos</Link>
           </li>
+
           <li>
             <Link href="/contacto">Contacto</Link>
           </li>
+
           <li className="menu-button">
             <Link href="/cart">
               <button className="cart-button" onClick={handleCart}>

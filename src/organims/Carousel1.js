@@ -15,6 +15,7 @@ const images = [
   '/img/Carousel1/Tucuman-San-Javier.webp',
   '/img/Carousel1/Tucuman.webp',
 ];
+
 //Cambio de colores de letras
 const colors = [
   { h1: '#F4F4F8', h2: '#D7B860' },

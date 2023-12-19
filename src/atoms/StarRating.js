@@ -1,4 +1,4 @@
-import React from 'react';
+
 import '../styles/Home.module.css';
 
 /* Estrellas Valoración Puntuaciones de clientes*/
@@ -13,18 +13,19 @@ const StarRating = ({ rating }) => {
     <div className="star-rating">{stars}</div>;
     
     <style jsx>{`
-.star-rating {
-  font-size: 24px;
-}
+      .star-rating {
+        font-size: 24px;
+      }
 
-.star-filled {
-  color: gold;
-}
+      .star-filled {
+        color: gold;
+      }
 
-.star-empty {
-  color: #ccc;
-}
-`}</style>
+      .star-empty {
+        color: #ccc;
+      }
+      `}</style>
+      
     </>
   );
    

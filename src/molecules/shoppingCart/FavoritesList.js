@@ -1,6 +1,5 @@
 
-import { useShopping
- } from "@/context/CartContext";
+import { useShopping } from "@/context/CartContext";
 import FavoriteItem from './FavoriteItem';        
 
 const FavoritesList = () => {

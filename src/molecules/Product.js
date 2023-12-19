@@ -45,6 +45,7 @@ const Product = ({ product, addToCart, addToFavorites }) => {
             background-color: rgba(15, 34, 76, 0.5);
             width: 100%;
             height: 100%;
+            border-radius: 15px;
             position: absolute;
             top: 0;
             left: 0;
@@ -55,6 +56,7 @@ const Product = ({ product, addToCart, addToFavorites }) => {
           .destination-content {
             width: 80%;
             margin: auto;
+            border-radius: 15px;
             color: var(--white-color);
             padding: 10px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
