@@ -23,7 +23,7 @@ const CardsSection = () => {
             margin-bottom: -10px;
             font-family: "Alfa Slab One", serif;
             letter-spacing: 0.1em;
-            color: black;
+            
           }
 
 
